@@ -1,0 +1,30 @@
+#!/bin/bash
+sudo rm -r ./backend
+sudo rm -r ./frontend
+
+BACK=backend
+FRONT=frontend
+
+# BACKEND---
+mkdir ${BACK}
+cp ./bashFiles/Dockerfile-${BACK} ./${BACK}/Dockerfile
+cd ./${BACK}
+python -m venv venv
+source ./venv/bin/activate
+pip install --upgrade pip
+pip install django
+touch requirements.txt
+pip freeze > ./requirements.txt
+cd ..
+django-admin startproject backend backend
+cd ./backend
+./manage.py startapp api
+deactivate
+cd ..
+
+#FRONTEND---
+mkdir ${FRONT} 
+create-next-app ./${FRONT} .
+cp ./bashFiles/Dockerfile-${FRONT} ./${FRONT}/Dockerfile
+
+docker-compose up --build -d
