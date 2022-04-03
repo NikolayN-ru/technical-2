@@ -35,19 +35,19 @@ services:
     networks:
       - lb-docker-network
 
-  nginx:
-    image: nginx:stable-alpine
-    container_name: nginx-DOC
-    restart: unless-stopped
-    ports:
-      - "80:80"
-    volumes:
-      - ./nginx/nginx.conf.prod:/etc/nginx/conf.d/nginx.conf
-    depends_on:
-      - frontend
-      - backend
-    networks:
-      - lb-docker-network
+  # nginx:
+  #   image: nginx:stable-alpine
+  #   container_name: nginx-DOC
+  #   restart: unless-stopped
+  #   ports:
+  #     - "80:80"
+  #   volumes:
+  #     - ./nginx/nginx.conf.prod:/etc/nginx/conf.d/nginx.conf
+  #   depends_on:
+  #     - frontend
+  #     - backend
+  #   networks:
+  #     - lb-docker-network
   
   # db:
   #   image: postgres:11
