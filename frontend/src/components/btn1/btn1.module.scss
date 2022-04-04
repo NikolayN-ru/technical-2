@@ -1,0 +1,30 @@
+.btn1 {
+  display: inline-block;
+  background-color: var(--greenAwesome);
+  padding: 7px 25px 10px;
+  border: none;
+  border-radius: 18px;
+  color: var(--white);
+  cursor: pointer;
+  .img {
+	  border-radius: 50%;
+	  transition: 0.3s all;
+	  top: 7px;
+	  right: 10px;
+	  margin-left: 10px;
+  }
+}
+
+.btn1:hover {
+  .img {
+    transform: rotate(135deg);
+  }
+}
+
+.sdiv {
+  width: 20px;
+  height: 20px;
+  background-color: var(--greenAwesome);
+  padding: 10px;
+}
+

@@ -14,3 +14,8 @@ a {
 * {
   box-sizing: border-box;
 }
+
+:root {
+  --greenAwesome: #00C65E;
+  --white: #fff;
+}
