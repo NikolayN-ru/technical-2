@@ -6,19 +6,27 @@
   border-radius: 18px;
   color: var(--white);
   cursor: pointer;
+  position: relative;
+  span {
+    margin-right: 10px;
+  }
+
   .img {
-	  border-radius: 50%;
-	  transition: 0.3s all;
-	  top: 7px;
-	  right: 10px;
-	  margin-left: 10px;
+    border-radius: 50%;
+    transition: 0.3s all;
+    margin-left: 10px;
   }
 }
 
 .btn1:hover {
+  background-color: rgb(183, 68, 68);
   .img {
-    transform: rotate(135deg);
+    // transform: rotate(135deg);
   }
+}
+
+.btn1:active {
+  background-color: rgb(23, 135, 165);
 }
 
 .sdiv {
@@ -28,3 +36,22 @@
   padding: 10px;
 }
 
+.dop {
+  padding-right: 59px;
+}
+
+.imgTrue {
+  position: absolute;
+  top: 7px;
+  right: 27px;
+}
+
+.disabled {
+  pointer-events: none;
+  background-color: rgb(154, 154, 154);
+}
+
+.more {
+  padding: 13px 62px;
+  border-radius: 10px;
+}
