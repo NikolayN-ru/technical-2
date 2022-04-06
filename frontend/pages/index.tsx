@@ -1,12 +1,11 @@
+import styles from "../styles/Home.module.css";
+import Btn1 from "@/components/btn1";
+import Btn2 from "@/components/btn2";
+import Input1 from "@/components/input1";
+import Header from "@/src/header";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
-
-import Btn1 from "../src/components/btn1";
-import Btn2 from "../src/components/btn2";
-import Input1 from "../src/components/input1";
-import Header from "../src/header";
 
 const Home: NextPage = () => {
   return (

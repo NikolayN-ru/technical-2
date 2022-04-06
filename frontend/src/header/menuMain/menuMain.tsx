@@ -1,8 +1,7 @@
+import styles from "./menuMain.module.scss";
 import React, { useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-
-import styles from "./menuMain.module.scss";
 
 const MainMenu = () => {
   const [state, setState] = useState("");

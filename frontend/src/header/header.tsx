@@ -1,7 +1,6 @@
-import React from "react";
 import styles from "./header.module.scss";
-import Image from "next/image";
 import MainMenu from "./menuMain/menuMain";
+import Image from "next/image";
 
 const Header = () => {
   return (
