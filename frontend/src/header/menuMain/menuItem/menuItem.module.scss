@@ -1,0 +1,14 @@
+.item {
+  padding: 23px 20px;
+  cursor: pointer;
+  color: var(--grayPrimary);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+.item:hover {
+  background-color: var(--grrenLite);
+  // font-weight: 700;
+  color: var(--greenAwesome);
+}

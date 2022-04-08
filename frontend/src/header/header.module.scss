@@ -1,5 +1,14 @@
 .wrap {
   max-width: 1440px;
+  // display: flex;
+
+  .topBtn {
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .line {

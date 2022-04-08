@@ -1,0 +1,13 @@
+.breadCamps {
+  color: var(--grayMidle);
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.breadCampsItem:last-child {
+  color: var(--grayPrimary);
+}
+
+.breadCampsItem:hover {
+  color: var(--grayPrimary);
+}

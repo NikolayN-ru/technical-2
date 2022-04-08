@@ -17,6 +17,9 @@ a {
 
 :root {
   --greenAwesome: #00c65e;
+  --grrenLite: #00c65c30;
   --white: #fff;
   --grayPrimary: #363a45;
+  --grayLite: #F7F7F7;
+  --grayMidle: #DADCDC;
 }

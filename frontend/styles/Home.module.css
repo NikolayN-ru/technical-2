@@ -2,6 +2,11 @@
   padding: 0 2rem;
 }
 
+.layout {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
 .main {
   min-height: 100vh;
   padding: 4rem 0;

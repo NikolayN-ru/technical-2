@@ -10,10 +10,10 @@ import Image from "next/image";
 const Home: NextPage = () => {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       {/* <Btn1 title="Подать объявление" /> */}
-      <Input1 />
-      <Btn2 />
+      {/* <Input1 /> */}
+      {/* <Btn2 /> */}
     </div>
     // <div className={styles.container}>
     //   <Head>
