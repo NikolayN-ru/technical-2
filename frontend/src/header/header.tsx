@@ -3,8 +3,14 @@ import MainMenu from "./menuMain/menuMain";
 import Image from "next/image";
 import UserModule from "./userModule";
 import Extension from "./extension";
+import {connect} from 'react-redux';
+import {fetchPhones} from '../../redux/actions';
+import { useEffect } from "react";
 
-const Header = () => {
+const Header = ({state, fetchPhones}: any) => {
+  useEffect(()=>{
+    fetchPhones()
+  },[])
   return (
     <div className={styles.wrap}>
       <div className={styles.line}></div>
@@ -19,4 +25,13 @@ const Header = () => {
   );
 };
 
-export default Header;
+const mapStateToProps = (state) => {
+  return {
+    state: state
+  }
+}
+
+const mapDispatchToProps = {
+  fetchPhones,
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
