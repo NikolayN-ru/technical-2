@@ -1,0 +1,27 @@
+.city {
+  // background-color: rgb(66, 87, 162);
+  position: relative;
+  height: 30px;
+  font-weight: 400;
+  font-size: 14px;
+  span {
+    color: var(--grayPrimary);
+
+  }
+}
+
+.city:hover {
+  .cityMenu {
+    opacity: 1;
+  }
+}
+
+.cityMenu {
+  min-width: 50px;
+  min-height: 50px;
+  background-color: rgb(186, 181, 194);
+  position: absolute;
+  top: 30px;
+  right: 0;
+  opacity: 0;
+}

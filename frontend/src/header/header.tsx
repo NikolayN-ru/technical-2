@@ -7,27 +7,26 @@ import {connect} from 'react-redux';
 import {fetchPhones} from '../../redux/actions';
 import { useEffect } from "react";
 
-const Header = ({state, fetchPhones}: any) => {
+const Header = ({phones, fetchPhones, camps3}: any) => {
   useEffect(()=>{
     fetchPhones()
   },[])
   return (
     <div className={styles.wrap}>
       <div className={styles.line}></div>
-      {/* <div className={styles.topBtn}> */}
         <div className={styles.menu}>
           <MainMenu />
           <UserModule />
         </div>
         <Extension />
-      {/* </div> */}
     </div>
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: any) => {
   return {
-    state: state
+    phones: state.phones,
+    camps3: state
   }
 }
 
@@ -35,3 +34,4 @@ const mapDispatchToProps = {
   fetchPhones,
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
+

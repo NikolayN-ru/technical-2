@@ -1,0 +1,103 @@
+.item {
+  max-width: 100%;
+  //   min-height: 100vh;
+  box-shadow: 1px 2px 16px 3px rgba(54, 58, 69, 0.08);
+  border-radius: 10px;
+
+  h1 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    color: var(--grayPrimary);
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .blockItem {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 70px;
+    align-items: flex-start;
+    .descriptionItem {
+      width: 600px;
+      border-radius: 10px;
+
+      .itemPhotoItem {
+        border-radius: 10px;
+        border: 1px solid #dadcdc;
+        height: 460px;
+        position: relative;
+        padding: 15px 85px;
+
+        .itemPhotoLike {
+          position: absolute;
+          top: 15px;
+          right: 20px;
+          width: 20px;
+        }
+        .itemPhotoArrowLeft {
+          cursor: pointer;
+          position: absolute;
+          top: 200px;
+          left: 15px;
+        }
+
+        .itemPhotoArrowLeft:hover,
+        .itemPhotoArrowRight:hover {
+          opacity: 0.5;
+        }
+        .itemPhotoArrowRight {
+          cursor: pointer;
+          position: absolute;
+          top: 200px;
+          right: 15px;
+        }
+      }
+
+      .itemPhotoItem:hover {
+        border: 1px solid #51a555;
+      }
+      .descriptionItemText,
+      .descriptionItemHaracteristic {
+        margin-top: 20px;
+        padding: 25px 20px;
+        border-radius: 10px;
+        box-shadow: 1px 2px 16px 3px rgba(54, 58, 69, 0.08);
+
+        p {
+          font-weight: 400;
+          font-size: 14px;
+          color: var(--grayPrimary);
+          opacity: 0.7;
+        }
+      }
+    }
+
+    .offerItem {
+      max-width: 400px;
+      .offerItemBlock {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+        width: 400px;
+        box-shadow: 1px 2px 16px 3px rgba(54, 58, 69, 0.08);
+        border-radius: 10px;
+        padding: 25px 20px;
+
+        .offerItemBlockOptions {
+          p {
+            font-size: 14px;
+            color: var(--grayPrimary);
+            opacity: 0.7;
+          }
+        }
+      }
+      .offerItemBlock:hover {
+        box-shadow: 1px 2px 16px 3px rgba(54, 58, 69, 0.12);
+      }
+    }
+  }
+}

@@ -10,21 +10,24 @@ import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 import createRootReduser from "../redux/reducers";
+import Footer from "@/src/footer";
 const middlewares = [thunk]
 const store = createStore(createRootReduser(),
 // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 // applyMiddleware(...middlewares))
 composeWithDevTools(applyMiddleware(...middlewares)))
 
-const breadCamps = ['главная страница', 'категории', 'телефоны и аксесуары', 'смартфоны']
+// const breadCamps = ['главная страница', 'категории', 'телефоны и аксесуары', 'смартфоны']
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
     <div className={styles.layout}>
       <Header />
-      <BreadCamps {...breadCamps}/>
+      {/* <BreadCamps {...breadCamps}/> */}
+      <BreadCamps />
       <Component {...pageProps} />
+      <Footer />
     </div>
     </Provider>
   );

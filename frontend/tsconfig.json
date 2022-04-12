@@ -20,6 +20,6 @@
       "@/components/*": ["src/components/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/header/userModule/city/cityItem/index.js"],
   "exclude": ["node_modules"]
 }
