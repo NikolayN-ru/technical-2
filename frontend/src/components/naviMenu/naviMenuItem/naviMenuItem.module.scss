@@ -1,0 +1,15 @@
+.naviMenuItem {
+  display: flex;
+  gap: 13px;
+  span {
+    cursor: pointer;
+  }
+  span:hover {
+    color: var(--greenAwesome);
+  }
+}
+
+.active {
+  color: var(--greenAwesome);
+  border-right: 2px solid var(--greenAwesome);
+}

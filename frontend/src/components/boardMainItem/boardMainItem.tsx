@@ -7,11 +7,11 @@ import Link from 'next/link';
 
 const BoardMainItem = ({ stoped = true, item:{id, title, price, city, day, like} }: BoardMainItemProps): JSX.Element => {
   return (
-	  <Link href={`/${id}`}>
+    <Link href={`/${id}`}>
     <div className={styles.item}>
       <div className={styles.itemDescLeft}>
         <input type="checkbox" />
-        <Image src="/23.png" width="90px" height="123px" alt="phone" />
+        <Image src="/23.png" width="90px" height="123px" alt="phone" draggable="false"/>
         <div className={styles.itemDescLeftTitle}>
           <p>Телефон {title} </p>
           <span>{price} ₽</span>
@@ -21,7 +21,7 @@ const BoardMainItem = ({ stoped = true, item:{id, title, price, city, day, like}
       </div>
       <div className={styles.itemDescRight}>
         <div className={styles.rings}>
-          <Image src="/ring.svg" width="17px" height="5px" alt="rings" />
+          <Image src="/ring.svg" width="17px" height="5px" alt="rings" draggable="false"/>
 
           <div className={styles.ringsMenu}>
             <p>Продать быстрее</p>
@@ -42,11 +42,12 @@ const BoardMainItem = ({ stoped = true, item:{id, title, price, city, day, like}
             width="41px"
             height="7px"
             alt="progressBar"
+            draggable="false"
           />
           <span>Осталось {day} дней </span>
         </div>
         <div className={styles.ico}>
-          <Image src="/sold.svg" width="17px" height="17px" alt="progressBar" />
+          <Image src="/sold.svg" width="17px" height="17px" alt="progressBar" draggable="false"/>
           <Image
             src="/statistic.svg"
             width="17px"

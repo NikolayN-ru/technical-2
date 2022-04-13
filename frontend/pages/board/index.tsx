@@ -2,19 +2,25 @@ import { breadCamps, checkItems } from "../../redux/actions";
 import styles from "./board.module.scss";
 import BoardMainItem from "@/src/components/boardMainItem";
 import Btn3 from "@/src/components/btn3";
+import Image from "next/image";
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import NaviData from "@/src/components/naviData";
+import NaviMenu from "@/src/components/naviMenu";
+import NaviStatistics from "@/src/components/naviStatistics";
 
 const Board = ({ breadCamps, stateItems, items, showItems, checkItems }) => {
-  const num = 2;
-//   console.log("showItems", showItems);
   useEffect(() => {
-    breadCamps(["доска объявлений", "items"]);
-	checkItems();
+    breadCamps(["доска объявлений"]);
+    checkItems();
   }, []);
   return (
     <div className={styles.board}>
-      <div className={styles.navi}>navi</div>
+      <div className={styles.navi}>
+      <NaviData />
+      <NaviMenu />
+      <NaviStatistics />
+      </div>
       <div className={styles.main}>
         <div className={styles.mainMenu}>
           {stateItems.items.map((item) => (
@@ -33,7 +39,9 @@ const Board = ({ breadCamps, stateItems, items, showItems, checkItems }) => {
               <span>Снять с публикации</span>
             </div>
             {items.map((item) =>
-              item.active == false ? <BoardMainItem key={item.id} item={item}/> : null
+              item.active == false ? (
+                <BoardMainItem key={item.id} item={item} />
+              ) : null
             )}
           </div>
         ) : null}
@@ -45,7 +53,9 @@ const Board = ({ breadCamps, stateItems, items, showItems, checkItems }) => {
               <span>Снять с публикации</span>
             </div>
             {items.map((item) =>
-              item.active == true ? <BoardMainItem key={item.id}  item={item} /> : null
+              item.active == true ? (
+                <BoardMainItem key={item.id} item={item} />
+              ) : null
             )}
           </div>
         ) : null}
@@ -57,11 +67,13 @@ const Board = ({ breadCamps, stateItems, items, showItems, checkItems }) => {
               <span>Снять с публикации</span>
             </div>
             {items.map((item) =>
-              item.type == 'buy' ? <BoardMainItem key={item.id} item={item}/> : null
+              item.type == "buy" ? (
+                <BoardMainItem key={item.id} item={item} />
+              ) : null
             )}
           </div>
         ) : null}
-		        {showItems == "Продано" || showItems == "Всего" ? (
+        {showItems == "Продано" || showItems == "Всего" ? (
           <div className={styles.mainPassive}>
             <div>
               <h2>Продано</h2>
@@ -69,7 +81,9 @@ const Board = ({ breadCamps, stateItems, items, showItems, checkItems }) => {
               <span>Снять с публикации</span>
             </div>
             {items.map((item) =>
-              item.active == null ? <BoardMainItem key={item.id} /> : null
+              item.active == null ? (
+                <BoardMainItem key={item.id} item={item} />
+              ) : null
             )}
           </div>
         ) : null}

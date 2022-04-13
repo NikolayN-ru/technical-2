@@ -1,0 +1,41 @@
+.naviStat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 25px 25px 30px;
+  transition: all 0.3s;
+  box-shadow: 1px 2px 16px 3px rgba(54, 58, 69, 0.08);
+
+  h2 {
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--greenAwesome);
+    margin-bottom: 0;
+  }
+  p {
+    margin-top: 0;
+    color: var(--grayPrimary);
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .naviStatCount {
+    display: flex;
+    gap: 20px;
+
+    .naviStatCountOne,
+    .naviStatCountTwo {
+      text-align: center;
+      p {
+        color: var(--greenAwesome);
+        font-weight: 700;
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.naviStat:hover {
+  box-shadow: 1px 2px 16px 3px rgba(54, 58, 69, 0.18);
+}

@@ -1,7 +1,7 @@
 import { FETCH_ITEM } from "redux/actionTypes";
 
 const initialState = {
-	data: null
+	data: {}
 }
 
 interface propsItem {
@@ -13,6 +13,7 @@ interface propsItem {
 export default (state = initialState, { type, payload }:propsItem) => {
 	switch (type) {
 		case FETCH_ITEM:
+			console.log(payload)
 			return {
 				data: payload
 			}

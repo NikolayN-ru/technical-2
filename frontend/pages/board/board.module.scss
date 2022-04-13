@@ -5,6 +5,9 @@
 }
 
 .navi {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .main {
@@ -14,7 +17,8 @@
     gap: 15px;
     justify-content: flex-start;
   }
-  .mainPassive,  .mainActive{
+  .mainPassive,
+  .mainActive {
     margin-bottom: 20px;
     div {
       margin-bottom: 20px;

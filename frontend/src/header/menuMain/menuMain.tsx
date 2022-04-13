@@ -22,8 +22,8 @@ const MainMenu:FC = ({menuItems}: any) => {
   return (
     <div className={styles.menuMain}>
       <Image src="/logo.svg" width="100%" height="30px" alt="logo" />
-      {menuItems.map(({ id, title }) => (
-        <MenuItem key={id} title={title} />
+      {menuItems.map(({ id, title, linkItem }) => (
+        <MenuItem key={id} title={title} linkItem={linkItem} />
         ))}
       {/* {state || <Skeleton count={1} />} */}
     </div>

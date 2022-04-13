@@ -1,40 +1,35 @@
 import styles from "./item.module.scss";
 import Btn1 from "@/src/components/btn1";
+import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { connect } from "react-redux";
-import { fetchItem } from "redux/actions";
+import { breadCamps, fetchItem } from "redux/actions";
+import { titleMerge } from "config/seo.config";
 
-const Item = ({ fetchItem, data }) => {
-  const [state, setState] = useState(null);
-  // const [router, setRouter] = useState(0)
-  const { asPath } = useRouter();
-  const idxItem = Number(asPath.split("/")[1]);
+const Item = ({ fetchItem, data, breadCamps }) => {
+  const [state, setState] = useState(0);
+  const router = useRouter();
+  const { item } = router.query;
+  const item2 = Number(item);
+
   useEffect(() => {
-    const item = fetchItem(idxItem);
-    setState(item);
-  }, []);
+    setState(item2);
+  }, [item2]);
 
-  // setState(idxItem)
-  // useEffect(()=>{
-  // let itemData = fetchItem(state)
-  // setRouter(number(idxItem))
-  // setState(itemData)
-  // }, [])
-
-  // useState(()=>{
-  //   let itemData = fetchItem(idxItem)
-  // },[])
-
-  if (!data) {
-    return <>loading</>;
-  }
+  useEffect(() => {
+    fetchItem(state);
+    breadCamps(["доска объявлений", data && data.title]);
+  }, [state, data]);
 
   return (
     <div className={styles.item}>
-      <h1>{data.title}</h1>
+      <Head>
+        <title>{data && titleMerge(data.title)}</title>
+      </Head>
+      <h1>{data && data.title}</h1>
       <div className={styles.blockItem}>
         <div className={styles.descriptionItem}>
           <div className={styles.itemPhotoItem}>
@@ -74,7 +69,7 @@ const Item = ({ fetchItem, data }) => {
         </div>
         <div className={styles.offerItem}>
           <div className={styles.offerItemBlock}>
-            <p>Цена {data.price} ₽</p>
+            <p>Цена {data && data.price} ₽</p>
             <Btn1 title="Продать быстрее" more={true} />
             <Btn1 title="Статистика" more={true} />
             <Btn1 title="Снять с публикации" more={true} />
@@ -98,6 +93,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
   fetchItem,
+  breadCamps,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Item);

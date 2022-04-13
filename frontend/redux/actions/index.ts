@@ -1,4 +1,3 @@
-import { countItemsBtn, getItemData } from "redux/selectors";
 import {
   FETCH_PHONES_SUCCESS,
   MAIN_CITY,
@@ -6,8 +5,10 @@ import {
   BREAD_CAMPS_REPLASE,
   CLICK_BOARD_MAIN_MENU,
   CHECK_ITEMS_BTN,
-  FETCH_ITEM
+  FETCH_ITEM,
+  FETCH_LINK_NAVI_MENU,
 } from "../actionTypes";
+import { countItemsBtn, getItemData } from "redux/selectors";
 
 export const fetchPhones = () => async (dispatch) => {
   dispatch({
@@ -32,30 +33,42 @@ export const inputQuestion = (question) => (dispatch) => {
 export const breadCamps = (items) => (dispatch) => {
   dispatch({
     type: BREAD_CAMPS_REPLASE,
-    payload: items
-  })
-}
+    payload: items,
+  });
+};
 
 export const clickBoardMainMenu = (item) => (dispatch) => {
   dispatch({
     type: CLICK_BOARD_MAIN_MENU,
-    payload: item
-  })
-}
+    payload: item,
+  });
+};
 
 export const checkItems = () => (dispatch, getState) => {
-  const stat = countItemsBtn(getState())
+  const stat = countItemsBtn(getState());
   dispatch({
     type: CHECK_ITEMS_BTN,
-    payload: stat
-  })
-}
+    payload: stat,
+  });
+};
 
 export const fetchItem = (id) => (dispatch, getState) => {
-  const data = getItemData(id, getState())
-  // console.log(data)
+  // const data = getItemData(id, getState())
+  const item = getState().mockDataItems.data.find((item) => item.id === id);
+  // const data = getState().mockDataItems.data[id];
   dispatch({
     type: FETCH_ITEM,
-    payload: data
-  })
-}
+    payload: item,
+  });
+};
+
+export const clickNaviMenuItem = (title) => (dispatch, getState) => {
+  const menu = getState().naviMenu.menu;
+  menu.forEach((item ) => {
+    item.title == title ? item.active=true : item.active=false
+  } );
+  dispatch({
+    type: FETCH_LINK_NAVI_MENU,
+    payload: menu,
+  });
+};

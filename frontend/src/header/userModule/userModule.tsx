@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import City from "./city/city";
 
 const UserModule: FC = ({city}):JSX.Element => {
-  console.log(city);
+  // console.log(city);
   return (
     <div className={styles.userModule}>
       <Image src="/position.svg" width="30px" height="100%" alt="logo" />

@@ -1,0 +1,13 @@
+.naviMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 25px 25px 30px;
+  transition: all 0.3s;
+  box-shadow: 1px 2px 16px 3px rgba(54, 58, 69, 0.08);
+  
+}
+
+.naviMenu:hover {
+  box-shadow: 1px 2px 16px 3px rgba(54, 58, 69, 0.18);
+}

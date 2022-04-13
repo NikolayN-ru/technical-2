@@ -7,6 +7,7 @@ import phones from "../reducers/phones";
 import boardMainMenu from "./boardMainMenu";
 import itemData from "./itemData";
 import mockDataItems from "./mockDataItems";
+import naviMenu from "./naviMenu";
 import { combineReducers } from "redux";
 
 export default () =>
@@ -20,4 +21,5 @@ export default () =>
     boardMainMenu,
     mockDataItems,
     itemData,
+    naviMenu,
   });
