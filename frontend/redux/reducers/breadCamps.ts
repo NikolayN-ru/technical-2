@@ -1,11 +1,19 @@
 import { BREAD_CAMPS_REPLASE } from "../actionTypes";
 
-const initialState = {
+interface breadCampsStateProps {
+  camps: string[]; 
+}
+
+const initialState:breadCampsStateProps = {
   camps: ["главная страница", "категории", "телефоны и аксесуары", "смартфоны"],
 };
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default (state = initialState, { type, payload }) => {
+interface breadCampsProps {
+  type: string,
+  payload: any
+}
+
+export const breadCamps = (state = initialState, { type, payload }:breadCampsProps) => {
   switch (type) {
     case BREAD_CAMPS_REPLASE:
       return {

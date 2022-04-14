@@ -1,2 +1,3 @@
-import BoardMainItem from './boardMainItem';
+import BoardMainItem from "./boardMainItem";
+
 export default BoardMainItem;

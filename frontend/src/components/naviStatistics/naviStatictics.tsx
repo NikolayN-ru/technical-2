@@ -1,7 +1,8 @@
 import styles from "./naviStatictics.module.scss";
 import Image from "next/image";
+import { FC } from "react";
 
-const NaviStatictics = () => {
+const NaviStatictics: FC = (): JSX.Element => {
   return (
     <div className={styles.naviStat}>
       <h2>15 000 ₽</h2>

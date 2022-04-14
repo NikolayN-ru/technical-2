@@ -2,12 +2,12 @@ import Btn1 from "../btn1";
 import { BoardMainItemProps } from "./boardMainItem.interface";
 import styles from "./boardMainItem.module.scss";
 import Image from "next/image";
-import React from "react";
+import React, { FC } from "react";
 import Link from 'next/link';
 
-const BoardMainItem = ({ stoped = true, item:{id, title, price, city, day, like} }: BoardMainItemProps): JSX.Element => {
+const BoardMainItem:FC<BoardMainItemProps> = ({ stoped = true, item:{id, title, price, city, day, like} }): JSX.Element => {
   return (
-    <Link href={`/${id}`}>
+    <Link href={`/${id}`} passHref>
     <div className={styles.item}>
       <div className={styles.itemDescLeft}>
         <input type="checkbox" />
@@ -22,7 +22,6 @@ const BoardMainItem = ({ stoped = true, item:{id, title, price, city, day, like}
       <div className={styles.itemDescRight}>
         <div className={styles.rings}>
           <Image src="/ring.svg" width="17px" height="5px" alt="rings" draggable="false"/>
-
           <div className={styles.ringsMenu}>
             <p>Продать быстрее</p>
             <p>Редактировать</p>
@@ -35,7 +34,6 @@ const BoardMainItem = ({ stoped = true, item:{id, title, price, city, day, like}
             <p>Приостановлено</p>
           </div>
         )}
-
         <div className={styles.progressBar}>
           <Image
             src="/progressBar.svg"
@@ -54,7 +52,6 @@ const BoardMainItem = ({ stoped = true, item:{id, title, price, city, day, like}
             height="17px"
             alt="progressBar"
           />
-
           <Image src="/ies.svg" width="17px" height="17px" alt="progressBar" />
           <span>30 + 4</span>
           <Image

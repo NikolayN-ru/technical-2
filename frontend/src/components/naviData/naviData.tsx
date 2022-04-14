@@ -1,8 +1,8 @@
 import styles from "./naviData.module.scss";
 import Image from "next/image";
-import React from "react";
+import { FC } from "react";
 
-const NaviData = () => {
+const NaviData: FC = () => {
   return (
     <div className={styles.naviData}>
       <div className={styles.naviDataLogo}>
@@ -11,13 +11,19 @@ const NaviData = () => {
           <p>Алексей К.</p>
           <div className={styles.naviDataStar}>
             <span>5</span>
-            <Image src="/star.svg" width="10" height="10" alt="logo" />
-            <Image src="/star.svg" width="10" height="10" alt="logo" />
-            <Image src="/star.svg" width="10" height="10" alt="logo" />
-            <Image src="/star.svg" width="10" height="10" alt="logo" />
-            <Image src="/star.svg" width="10" height="10" alt="logo" />
+            {["", "", "", "", "", ""].map((i, k) => {
+              return (
+                <Image
+                  key={k}
+                  src="/star.svg"
+                  width="10"
+                  height="10"
+                  alt="logo"
+                />
+              );
+            })}
           </div>
-          <p>на Dily.ru с 2020 года</p>
+          <p>на Dily.ru с 2022 года</p>
         </div>
       </div>
       <div className={styles.naviDataFolovers}>

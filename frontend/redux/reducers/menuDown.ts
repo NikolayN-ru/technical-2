@@ -4,7 +4,7 @@ const initialState = [
   { id: 3, title: "Благотворительность", icon: "/handle.svg" },
 ];
 
-export default (state = initialState, { type, payload }) => {
+export const menuDown = (state = initialState, { type, payload }:any) => {
   switch (type) {
     default:
       return state;

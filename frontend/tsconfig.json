@@ -18,8 +18,9 @@
     "paths": {
       "@/src/*": ["src/*"],
       "@/components/*": ["src/components/*"],
+      "@/redux/*": ["redux/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/header/userModule/city/cityItem/index.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/header/userModule/city/cityItem/index.ts"],
   "exclude": ["node_modules"]
 }

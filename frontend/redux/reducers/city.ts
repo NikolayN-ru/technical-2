@@ -1,11 +1,21 @@
 import { MAIN_CITY } from "../actionTypes";
 
-const initialState = {
+interface cityStateProps {
+  mainCity: string;
+  city: string[];
+}
+
+const initialState:cityStateProps = {
   mainCity: "moskov",
   city: ["Москва", "Санкт-Петербург", "Омск"],
 };
 
-export default (state = initialState, { type, payload }) => {
+interface cityProps {
+  type: string,
+  payload: any
+}
+
+export const city =  (state = initialState, { type, payload }:cityProps) => {
   switch (type) {
     case MAIN_CITY:
       return {

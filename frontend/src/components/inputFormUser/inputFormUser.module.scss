@@ -1,0 +1,46 @@
+.inputBlock {
+  max-width: 500px;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  p {
+    color: var(--grayPrimary);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 150%;
+  }
+  .inputMain {
+    border-radius: 10px;
+    border: 1px solid #dadcdc;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+
+    select {
+	  width: 300px;
+      border: none;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      outline: none;
+    }
+
+    input {
+      width: 300px;
+      border: none;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      outline: none;
+    }
+  }
+  div {
+    p {
+      width: 300px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 130%;
+      color: var(--grayPrimary);
+    }
+  }
+}

@@ -1,9 +1,10 @@
+import { mainCity } from "../../../../../redux/actions";
+import { cityItemProps } from "./cityItem.interface";
 import styles from "./cityItem.module.scss";
-import React from "react";
+import { FC } from "react";
 import { connect } from "react-redux";
-import {mainCity} from '../../../../../redux/actions';
 
-const CityItem = ({ item, mainCity }) => {
+const CityItem: FC<cityItemProps> = ({ item, mainCity }): JSX.Element => {
   return (
     <div className={styles.cityItem}>
       <button onClick={() => mainCity(item)}>{item}</button>

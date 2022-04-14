@@ -1,4 +1,6 @@
-export const data = [
+import {mockDataProps} from './data.interface';
+
+export const data: Array<mockDataProps> = [
 	{id: 1, active: true, type: 'active', title: 'Iphone-1', price: 11000, city: 'Moskov', day: 15, like: 32},
 	{id: 2, active: true, type: 'buy', title: 'Readmi-2', price: 13400, city: 'Moskov', day: 15, like: 32},
 	// {id: 3, active: true, type: 'active', title: 'Xiaomi', price: 10000, city: 'Moskov', day: 15, like: 32},

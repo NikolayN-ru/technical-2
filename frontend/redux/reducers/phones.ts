@@ -5,12 +5,11 @@ const initialState = {
 	foo:'bar'
 };
 
-export default (state = initialState, { type, payload }) => {
+export const phones = (state = initialState, { type, payload }:any) => {
   switch (type) {
     case FETCH_PHONES_SUCCESS:
       return {
         res: "yes!",
-        // data: payload
       };
     default:
       return state;

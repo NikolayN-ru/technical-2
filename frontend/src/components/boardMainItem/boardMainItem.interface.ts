@@ -1,7 +1,7 @@
 interface itemProps {
   id: number;
   active: boolean;
-  type: "active" | "by" | "noActive";
+  type: "active" | "buy" | "noActive";
   title: string;
   price: number;
   city: string;

@@ -1,8 +1,20 @@
 import { INPUT_QUESTION } from "../actionTypes";
 
-const initialState = { input: "asd" };
+interface inputQuestionStateProps {
+  input: string;
+}
 
-export default (state = initialState, { type, payload }) => {
+const initialState: inputQuestionStateProps = { input: "asd" };
+
+interface inputQuestionProps {
+  type: string;
+  payload: any;
+}
+
+export const inputQuestion = (
+  state = initialState,
+  { type, payload }: inputQuestionProps
+) => {
   switch (type) {
     case INPUT_QUESTION:
       return {

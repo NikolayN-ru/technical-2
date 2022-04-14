@@ -1,2 +1,3 @@
-import Extension from './extension';
+import Extension from "./extension";
+
 export default Extension;

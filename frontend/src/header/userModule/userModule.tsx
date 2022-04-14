@@ -1,15 +1,13 @@
+import City from "./city/city";
 import styles from "./userModule.module.scss";
 import Image from "next/image";
 import { FC } from "react";
-import {connect} from 'react-redux';
-import City from "./city/city";
+import { connect } from "react-redux";
 
-const UserModule: FC = ({city}):JSX.Element => {
-  // console.log(city);
+const UserModule: FC = (): JSX.Element => {
   return (
     <div className={styles.userModule}>
       <Image src="/position.svg" width="30px" height="100%" alt="logo" />
-      {/* <span>Москва</span> */}
       <City />
       <Image src="/arrow-down.svg" width="16px" height="100%" alt="logo" />
       <Image src="/don.svg" width="16px" height="100%" alt="logo" />
@@ -20,10 +18,10 @@ const UserModule: FC = ({city}):JSX.Element => {
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    city: state.city
-  }
-}
+    city: state.city,
+  };
+};
 
 export default connect(null, null)(UserModule);

@@ -1,34 +1,25 @@
+import createRootReduser from "../redux/reducers";
 import styles from "../styles/Home.module.css";
 import "../styles/globals.css";
-import BreadCamps from "@/src/components/breadCamps";
-import Header from "@/src/header";
 import type { AppProps } from "next/app";
-
-import { createStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
 import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
+import thunk from "redux-thunk";
 
-import createRootReduser from "../redux/reducers";
-import Footer from "@/src/footer";
-const middlewares = [thunk]
-const store = createStore(createRootReduser(),
-// window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-// applyMiddleware(...middlewares))
-composeWithDevTools(applyMiddleware(...middlewares)))
+const middlewares = [thunk];
 
-// const breadCamps = ['главная страница', 'категории', 'телефоны и аксесуары', 'смартфоны']
+const store = createStore(
+  createRootReduser(),
+  composeWithDevTools(applyMiddleware(...middlewares))
+);
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
-    <div className={styles.layout}>
-      <Header />
-      {/* <BreadCamps {...breadCamps}/> */}
-      <BreadCamps />
-      <Component {...pageProps} />
-      <Footer />
-    </div>
+      <div className={styles.layout}>
+        <Component {...pageProps} />
+      </div>
     </Provider>
   );
 }

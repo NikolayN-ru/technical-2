@@ -1,6 +1,20 @@
 import { FETCH_LINK_NAVI_MENU } from "redux/actionTypes"
 
-const initialState = {
+interface naviMenuStateItemProps {
+	id: number;
+	title: string;
+	active: boolean;
+	link: string;
+	image: string;
+	width: number;
+	height: number;
+}
+
+interface naviMenuStateProps {
+	menu: naviMenuStateItemProps[];
+}
+
+const initialState:naviMenuStateProps = {
 	menu: [
 		{id: 1, title: 'Мои объявления', active: false, link: 'myitems', image: '/list.svg', width:14, height:17},
 		{id: 2, title: 'Мои сообщения', active: false, link: 'mymessage', image: '/message.svg', width:17, height:17},
@@ -10,7 +24,12 @@ const initialState = {
 	]
 }
 
-export default (state = initialState, { type, payload }) => {
+interface naviMenuProps {
+	type: string,
+	payload: any
+  }
+
+export const naviMenu = (state = initialState, { type, payload }:naviMenuProps) => {
 	switch (type) {
 		case FETCH_LINK_NAVI_MENU:
 			return {

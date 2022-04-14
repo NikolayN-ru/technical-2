@@ -3,7 +3,7 @@ import styles from "./itemMenuDown.module.scss";
 import Image from "next/image";
 import { FC } from "react";
 
-const ItemMenuDown: FC<propsItemMenuDown> = ({ title, icon }) => {
+const ItemMenuDown: FC<propsItemMenuDown> = ({ title, icon }): JSX.Element => {
   return (
     <div className={styles.itemMenuDown}>
       <Image src={icon} width="14px" height="19px" alt="title" />

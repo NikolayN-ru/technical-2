@@ -1,61 +1,61 @@
 .naviData {
-    cursor: pointer;
-    transition: all 0.3s;
-    box-shadow: 1px 2px 16px 3px rgba(54, 58, 69, 0.08);
-    border-radius: 5px;
-    padding: 25px 20px 35px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 1px 2px 16px 3px rgba(54, 58, 69, 0.08);
+  border-radius: 5px;
+  padding: 25px 20px 35px;
 
-    .naviDataLogo {
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
+  .naviDataLogo {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
 
-      .naviDataLogoDesc {
-        p:first-child {
-          margin-top: 0;
-          color: var(--grayPrimary);
-          font-size: 18px;
-          font-weight: 700;
-        }
-        .naviDataStar {
-          display: flex;
-          gap: 5px;
-          span {
-            color: var(--greenAwesome);
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 150%;
-          }
-        }
-        p:last-child {
-          font-size: 12px;
-          font-weight: 400;
-        }
+    .naviDataLogoDesc {
+      p:first-child {
+        margin-top: 0;
+        color: var(--grayPrimary);
+        font-size: 18px;
+        font-weight: 700;
       }
-    }
-    .naviDataFolovers {
-      display: flex;
-      gap: 12px;
-
-      .naviDataFoloversItem {
-        font-size: 12px;
-        text-align: center;
-        > p {
+      .naviDataStar {
+        display: flex;
+        gap: 5px;
+        span {
           color: var(--greenAwesome);
-          font-weight: 700;
-          font-size: 18px;
-          line-height: 150%;
-          margin-bottom: 5px;
-        }
-        > span {
-          color: var(--grayPrimary);
           font-weight: 400;
           font-size: 14px;
           line-height: 150%;
         }
       }
+      p:last-child {
+        font-size: 12px;
+        font-weight: 400;
+      }
     }
   }
-  .naviData:hover {
-    box-shadow: 1px 2px 16px 3px rgba(54, 58, 69, 0.18);
+  .naviDataFolovers {
+    display: flex;
+    gap: 12px;
+
+    .naviDataFoloversItem {
+      font-size: 12px;
+      text-align: center;
+      > p {
+        color: var(--greenAwesome);
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 150%;
+        margin-bottom: 5px;
+      }
+      > span {
+        color: var(--grayPrimary);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+      }
+    }
   }
+}
+.naviData:hover {
+  box-shadow: 1px 2px 16px 3px rgba(54, 58, 69, 0.18);
+}

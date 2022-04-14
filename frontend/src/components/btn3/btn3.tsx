@@ -2,15 +2,15 @@ import { clickBoardMainMenu } from "../../../redux/actions";
 import propsBtn3 from "./btn3.interface";
 import styles from "./btn3.module.scss";
 import cn from "classnames";
-import React, { FC } from "react";
+import { FC } from "react";
 import { connect } from "react-redux";
 
-const Btn3 = ({
+const Btn3: FC<propsBtn3> = ({
   title,
   num,
   active = false,
   clickBoardMainMenu,
-}: propsBtn3): JSX.Element => {
+}): JSX.Element => {
   return (
     <div
       onClick={() => clickBoardMainMenu(title)}

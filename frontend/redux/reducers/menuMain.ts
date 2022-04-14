@@ -7,7 +7,7 @@ const initialState = [
   { id: 4, title: "Скупка", linkItem: "/sale" },
 ];
 
-export default (state = initialState, { type, payload }) => {
+export const mainMenu =  (state = initialState, { type, payload }: any) => {
   switch (type) {
     case MAIN_MENU:
       return state;

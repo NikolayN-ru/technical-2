@@ -1,8 +1,8 @@
-import React, { FC } from "react";
-import Image from "next/image";
-import styles from "./btn1.module.scss";
 import { propsBtn1 } from "./btn1.interface";
+import styles from "./btn1.module.scss";
 import cn from "classnames";
+import Image from "next/image";
+import { FC } from "react";
 
 const Btn1: FC<propsBtn1> = ({
   title,
@@ -10,7 +10,7 @@ const Btn1: FC<propsBtn1> = ({
   disabled = false,
   more = false,
   cart = false,
-}: propsBtn1) => {
+}): JSX.Element => {
   return (
     <button
       className={cn(styles.btn1, {

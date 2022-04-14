@@ -1,0 +1,26 @@
+.board {
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  gap: 30px;
+}
+
+.navi {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main {
+  h1 {
+    color: var(--grayPrimary);
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    margin-bottom: 20px;
+  }
+  .data {
+    padding: 30px 35px;
+    box-shadow: 1px 2px 16px 3px rgba(54, 58, 69, 0.08);
+    border-radius: 10px;
+  }
+}

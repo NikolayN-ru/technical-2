@@ -1,16 +1,28 @@
+import LoaderSkeleton from "../loaderSkeleton";
+import { naviMenuProps, naviMenuItemProps } from "./naviManu.interface";
 import styles from "./naviMenu.module.scss";
 import NaviMenuItem from "./naviMenuItem";
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { naviMenuProps } from "./naviManu.interface";
 
-const NaviMenu:FC<naviMenuProps> = ({ menu }) => {
+const NaviMenu: FC<naviMenuProps> = ({ menu }): JSX.Element => {
+  const [state, setState] = useState(null);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setState(menu);
+    }, 2000);
+  });
+
   return (
     <div className={styles.naviMenu}>
-      {menu.menu.map((item) => (
-        <NaviMenuItem key={item.id} {...item} />
-        
-      ))}
+      {state ? (
+        state.menu.map((item: naviMenuItemProps) => (
+          <NaviMenuItem key={item.id} {...item} />
+        ))
+      ) : (
+        <LoaderSkeleton count={7} />
+      )}
     </div>
   );
 };

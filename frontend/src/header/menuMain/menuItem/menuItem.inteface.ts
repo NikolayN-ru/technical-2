@@ -1,3 +1,4 @@
 export interface propsMenuItem {
-	title: string;
+  title: string;
+  linkItem: string;
 }

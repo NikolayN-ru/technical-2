@@ -1,8 +1,9 @@
+import LayoutMain from '@/src/layout'
 import React from 'react'
 
 const Merket = () => {
   return (
-	<div>Merket</div>
+	  <LayoutMain>Merket</LayoutMain>
   )
 }
 

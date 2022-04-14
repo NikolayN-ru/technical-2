@@ -1,9 +1,8 @@
-import React from 'react'
+import LayoutMain from "@/src/layout";
+import React from "react";
 
 const Sale = () => {
-  return (
-	<div>Sale</div>
-  )
-}
+  return <LayoutMain>Sale</LayoutMain>;
+};
 
-export default Sale
+export default Sale;

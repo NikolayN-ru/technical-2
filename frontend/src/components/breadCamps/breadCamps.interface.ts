@@ -3,5 +3,5 @@ import { ReactNode } from "react";
 export interface propsBreadCamps {
   links?: string[];
   children?: ReactNode;
-  camps2?: string[]
+  camps2?: string[];
 }

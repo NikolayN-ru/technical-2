@@ -1,3 +1,1 @@
-export interface propsBtn2 {
-
-}
+export interface propsBtn2 {}
