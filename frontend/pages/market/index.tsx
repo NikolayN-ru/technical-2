@@ -1,8 +1,8 @@
 import LayoutMain from '@/src/layout'
 import Market from '@/src/pages/market'
-import {FC} from 'react'
+import { NextPage } from 'next'
 
-const Merket: FC = (): JSX.Element=> {
+const Merket: NextPage = (): JSX.Element=> {
   return (
 	  <LayoutMain>
       <Market />

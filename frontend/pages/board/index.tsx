@@ -3,9 +3,10 @@ import BoardPage from "@/src/pages/board";
 import UserData from "@/src/pages/userData";
 import UserLike from "@/src/pages/userLike";
 import UserMessage from "@/src/pages/userMessage";
+import { NextPage } from "next";
 import { connect } from "react-redux";
 
-const Board = ({ menu }) => {
+const Board:NextPage = ({ menu }): JSX.Element=> {
   return (
     <LayoutMain>
       {menu.menu[0].active && <BoardPage />}
