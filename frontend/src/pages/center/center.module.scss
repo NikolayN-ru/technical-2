@@ -1,0 +1,50 @@
+.senter {
+  .slider {
+    width: 100%;
+    position: relative;
+margin-bottom: 80px;
+    .description {
+      position: absolute;
+      top: 40px;
+      left: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+
+      > p {
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 150%;
+      }
+      > span {
+        width: 400px;
+        font-weight: 200;
+        font-size: 14px;
+        margin-bottom: 130px;
+      }
+      .btn {
+        display: flex;
+        gap: 20px;
+      }
+    }
+  }
+  .perrmissions {
+    //   background-color: red;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+margin-bottom: 80px;
+    .perrmissionsItem {
+      display: flex;
+      align-items: center;
+
+      span {
+        margin-right: 10px;
+        font-weight: 700;
+        font-size: 18px;
+        color: var(--grayPrimary);
+      }
+    }
+  }
+}

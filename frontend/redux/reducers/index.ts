@@ -1,6 +1,7 @@
 import { boardMainMenu } from "./boardMainMenu";
 import { breadCamps } from "./breadCamps";
 import { city } from "./city";
+import { formUser } from "./formUser";
 import { inputQuestion } from "./inputQuestion";
 import { itemData } from "./itemData";
 import { menuDown } from "./menuDown";
@@ -23,4 +24,5 @@ export default () =>
     mockDataItems,
     itemData,
     naviMenu,
+    formUser,
   });

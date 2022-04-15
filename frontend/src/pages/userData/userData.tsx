@@ -5,8 +5,9 @@ import NaviMenu from "@/src/components/naviMenu";
 import NaviStatistics from "@/src/components/naviStatistics";
 import { FC } from "react";
 import Btn1 from "@/src/components/btn1";
+import {connect} from 'react-redux';
 
-const UserData: FC = (): JSX.Element => {
+const UserData: FC = (formdata): JSX.Element => {
   return (
     <div className={styles.board}>
       <div className={styles.navi}>
@@ -17,7 +18,22 @@ const UserData: FC = (): JSX.Element => {
       <div className={styles.main}>
         <h1>Личные данные</h1>
         <div className={styles.data}>
-          <InputFormUser text="Имя и фамилия" hint="имя фамилия" />
+		  {formdata.formdata.map((item, key) => <InputFormUser key={key} {...item}/>)}
+		<Btn1 title='сохранить' more={true}/>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const mapStateToProps = state => {
+	return {
+		formdata: state.formUser.formdata
+	}
+}
+export default connect(mapStateToProps, null)(UserData);
+
+  {/* <InputFormUser text="Имя и фамилия" hint="имя фамилия" />
           <InputFormUser
             text="Телефоны"
             hint="телефон"
@@ -53,11 +69,4 @@ const UserData: FC = (): JSX.Element => {
           <InputFormUser
             text="Тип профиля"
             select={["частное лицо", "ИП", "ЮР лица"]}
-          />
-		<Btn1 title='сохранить' more={true}/>
-        </div>
-      </div>
-    </div>
-  );
-};
-export default UserData;
+/> */}

@@ -1,0 +1,40 @@
+.board {
+	display: grid;
+	grid-template-columns: 270px 1fr;
+	gap: 30px;
+  }
+  
+  .navi {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+  }
+  
+  .main {
+
+	.data {
+	  padding: 30px 35px;
+	  padding-top: 180px;
+	  padding-bottom: 300px;
+	  box-shadow: 1px 2px 16px 3px rgba(54, 58, 69, 0.08);
+	  border-radius: 10px;
+	  display: flex;
+	  flex-direction:column;
+	  align-items: center;
+text-align: center;
+	  h1 {
+		color: var(--grayPrimary);
+		font-weight: 700;
+		font-size: 32px;
+		line-height: 120%;
+		margin-bottom: 20px;
+	  }
+	  span {
+		opacity: 0.8;
+font-weight: 400;
+font-size: 16px;
+margin-bottom: 30px;
+	  }
+	}
+  }
+  

@@ -11,7 +11,7 @@ const NaviMenu: FC<naviMenuProps> = ({ menu }): JSX.Element => {
   useEffect(() => {
     setTimeout(() => {
       setState(menu);
-    }, 2000);
+    }, 400);
   });
 
   return (
