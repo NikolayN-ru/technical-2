@@ -10,7 +10,7 @@ const BreadCamps:FC<propsBreadCamps> = ({ camps2 }):JSX.Element => {
       {camps &&
         camps.map((item: string) => (
           <span className={styles.breadCampsItem} key={item}>
-            {" > " + item}
+            {item !== 'главная страница' ? " > " + item: item}
           </span>
         ))}
     </div>

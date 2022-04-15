@@ -9,6 +9,10 @@
 
 .item:hover {
   background-color: var(--grrenLite);
-  // font-weight: 700;
   color: var(--greenAwesome);
+}
+
+.active {
+  color: var(--greenAwesome);
+  background-color: var(--grayLite);
 }

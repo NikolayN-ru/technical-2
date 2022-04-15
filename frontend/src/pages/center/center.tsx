@@ -2,8 +2,14 @@ import styles from './center.module.scss';
 import Image from 'next/image';
 import Btn1 from '@/src/components/btn1';
 import Btn4 from '@/src/components/btn4/btn4';
+import {connect} from 'react-redux';
+import { breadCamps } from "@/redux/actions";
+import { useEffect } from 'react';
 
-const Center = () => {
+const Center = ({breadCamps}) => {
+	useEffect(() => {
+		breadCamps(["cервисный центр",])
+	},[])
   return (
 		  <div className={styles.senter}>
 
@@ -40,4 +46,9 @@ const Center = () => {
 	</div>
   )
 }
-export default Center;	
+
+const mapDispatchToProps = {
+	breadCamps,
+}
+
+export default connect(null, mapDispatchToProps)(Center);	

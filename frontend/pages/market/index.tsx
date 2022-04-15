@@ -1,9 +1,12 @@
 import LayoutMain from '@/src/layout'
-import React from 'react'
+import Market from '@/src/pages/market'
+import {FC} from 'react'
 
-const Merket = () => {
+const Merket: FC = (): JSX.Element=> {
   return (
-	  <LayoutMain>Merket</LayoutMain>
+	  <LayoutMain>
+      <Market />
+    </LayoutMain>
   )
 }
 

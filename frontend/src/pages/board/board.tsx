@@ -17,7 +17,7 @@ const BoardPage: FC = ({
   checkItems,
 }): JSX.Element => {
   useEffect(() => {
-    breadCamps(["доска объявлений"]);
+    breadCamps(["доска объявлений", "мои объявления"]);
     checkItems();
   }, []);
   return (

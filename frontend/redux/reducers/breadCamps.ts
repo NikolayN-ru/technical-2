@@ -5,7 +5,8 @@ interface breadCampsStateProps {
 }
 
 const initialState:breadCampsStateProps = {
-  camps: ["главная страница", "категории", "телефоны и аксесуары", "смартфоны"],
+  camps: [
+    "главная страница", "категории", "телефоны и аксесуары", "смартфоны"],
 };
 
 interface breadCampsProps {
