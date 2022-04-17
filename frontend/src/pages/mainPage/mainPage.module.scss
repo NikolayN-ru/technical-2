@@ -1,0 +1,25 @@
+.mainPage {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 120%;
+  color: #363a45;
+  position: relative;
+  padding: 0 30px;
+  display: flex;
+  flex-wrap: wrap;
+
+  button {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background: #00c65e;
+    box-shadow: 0px 4.22483px 12.6745px rgba(54, 58, 69, 0.2);
+    transform: matrix(0, -1, -1, 0, 0, 0);
+    transform: rotate(0deg);
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    top: 60%;
+    left: 0;
+  }
+}

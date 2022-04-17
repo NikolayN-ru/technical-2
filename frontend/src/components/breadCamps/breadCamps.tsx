@@ -2,6 +2,7 @@ import { propsBreadCamps } from "./breadCamps.interface";
 import styles from "./breadCamps.module.scss";
 import { FC } from "react";
 import { connect } from "react-redux";
+import Link from 'next/link';
 
 const BreadCamps:FC<propsBreadCamps> = ({ camps2 }):JSX.Element => {
   const camps: string[] | undefined = camps2;
@@ -10,7 +11,7 @@ const BreadCamps:FC<propsBreadCamps> = ({ camps2 }):JSX.Element => {
       {camps &&
         camps.map((item: string, id) => (
           <span className={styles.breadCampsItem} key={id}>
-            {item !== 'главная страница' ? " > " + item: item}
+            {item !== 'главная страница' ? " > " + item: <Link href='/'><a>{item}</a></Link>}
           </span>
         ))}
     </div>

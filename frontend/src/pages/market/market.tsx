@@ -1,7 +1,7 @@
 import { breadCamps, changeMenuShop } from "@/redux/actions"
 import { FC, useEffect } from "react"
 import { connect } from "react-redux"
-
+import styles from './market.module.scss';
 
 const Market: FC= ({breadCamps, changeMenuShop}): JSX.Element=> {
 	useEffect(() => {
@@ -9,7 +9,9 @@ const Market: FC= ({breadCamps, changeMenuShop}): JSX.Element=> {
 		changeMenuShop()
 	},[])
   return (
-	<div>Market</div>
+	<div>
+		Market
+	</div>
   )
 }
 
@@ -18,5 +20,4 @@ const mapDispatchToProps = {
 	changeMenuShop
 }
 
-
-export default connect(null, mapDispatchToProps)(Market)
+export default connect(null, mapDispatchToProps)(Market);

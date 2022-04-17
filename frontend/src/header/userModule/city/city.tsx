@@ -25,6 +25,8 @@ const City: FC<CityInterface> = ({ city }): JSX.Element => {
   );
 };
 
-const mapStateToProps = ({ city }: CityInterface) => city;
+const mapStateToProps = ({ city }: CityInterface) => {
+  return { city };
+};
 
 export default connect(mapStateToProps, null)(City);
