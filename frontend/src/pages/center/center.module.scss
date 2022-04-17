@@ -2,7 +2,7 @@
   .slider {
     width: 100%;
     position: relative;
-margin-bottom: 80px;
+    margin-bottom: 80px;
     .description {
       position: absolute;
       top: 40px;
@@ -29,22 +29,24 @@ margin-bottom: 80px;
     }
   }
   .perrmissions {
-    //   background-color: red;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-margin-bottom: 80px;
+    margin-bottom: 80px;
     .perrmissionsItem {
       display: flex;
       align-items: center;
-
+      transition: all 0.5s;
       span {
         margin-right: 10px;
         font-weight: 700;
         font-size: 18px;
         color: var(--grayPrimary);
       }
+    }
+    .perrmissionsItem:hover {
+      transform: rotate(30deg) scale(1.4);
     }
   }
 }

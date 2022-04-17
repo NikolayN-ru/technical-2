@@ -5,7 +5,7 @@ import NaviMenuItem from "./naviMenuItem";
 import { FC, useEffect, useState } from "react";
 import { connect } from "react-redux";
 
-const NaviMenu: FC<naviMenuProps> = ({ menu }): JSX.Element => {
+const NaviMenu: FC<naviMenuProps> = ({ menu=[] }): JSX.Element => {
   const [state, setState] = useState(null);
 
   useEffect(() => {
@@ -27,9 +27,9 @@ const NaviMenu: FC<naviMenuProps> = ({ menu }): JSX.Element => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({naviMenu}:{ naviMenu:naviMenuProps}) => {
   return {
-    menu: state.naviMenu,
+    menu: naviMenu,
   };
 };
 

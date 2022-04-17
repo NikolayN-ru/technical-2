@@ -7,8 +7,10 @@ export interface naviMenuItemProps {
   link: string;
   image: string;
   children?: ReactNode;
+  width: number;
+  height: number;
 }
 
 export interface naviMenuProps {
-  menu: naviMenuItemProps[];
+  menu?: naviMenuItemProps[];
 }

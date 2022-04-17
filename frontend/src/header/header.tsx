@@ -6,7 +6,13 @@ import { fetchPhones } from "@/redux/actions";
 import { FC, useEffect } from "react";
 import { connect } from "react-redux";
 
-const Header: FC = ({ phones, fetchPhones, camps3 }): JSX.Element => {
+// const Header: FC = ({ phones, fetchPhones, camps3 }): JSX.Element => {
+
+interface HeaderProps {
+  fetchPhones: () => void;
+}
+
+const Header: FC<HeaderProps> = ({ fetchPhones }): JSX.Element => {
   useEffect(() => {
     fetchPhones();
   }, []);
@@ -22,7 +28,7 @@ const Header: FC = ({ phones, fetchPhones, camps3 }): JSX.Element => {
   );
 };
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state) => {
   return {
     phones: state.phones,
     camps3: state,

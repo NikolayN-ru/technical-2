@@ -7,7 +7,24 @@ import { FC } from "react";
 import Btn1 from "@/src/components/btn1";
 import {connect} from 'react-redux';
 
-const UserData: FC = (formdata): JSX.Element => {
+interface formUserItemProps {
+	id: number;
+	text: string;
+	hint: string;
+	value: string;
+	btn: boolean;
+	titleBtn: string;
+	img: string;
+	placeholder: string;
+	inputElement: boolean;
+	select: string[];
+}
+
+interface formUserProps {
+	formdata: Readonly<Partial<formUserItemProps>>[];
+}
+
+const UserData: FC<formUserProps> = ({formdata}): JSX.Element => {
   return (
     <div className={styles.board}>
       <div className={styles.navi}>
@@ -18,7 +35,7 @@ const UserData: FC = (formdata): JSX.Element => {
       <div className={styles.main}>
         <h1>Личные данные</h1>
         <div className={styles.data}>
-		  {formdata.formdata.map((item, key) => <InputFormUser key={key} {...item}/>)}
+		  {formdata.map((item, key) => <InputFormUser key={key} {...item}/>)}
 		<Btn1 title='сохранить' more={true}/>
         </div>
       </div>
@@ -26,9 +43,9 @@ const UserData: FC = (formdata): JSX.Element => {
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = ({formUser:{formdata}}:{formUser:formUserProps}) => {
 	return {
-		formdata: state.formUser.formdata
+		formdata
 	}
 }
 export default connect(mapStateToProps, null)(UserData);

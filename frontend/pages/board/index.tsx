@@ -1,12 +1,17 @@
+import { changeMenuUpMain } from "@/redux/actions";
 import LayoutMain from "@/src/layout";
 import BoardPage from "@/src/pages/board";
 import UserData from "@/src/pages/userData";
 import UserLike from "@/src/pages/userLike";
 import UserMessage from "@/src/pages/userMessage";
 import { NextPage } from "next";
+import { useEffect } from "react";
 import { connect } from "react-redux";
 
-const Board:NextPage = ({ menu }): JSX.Element=> {
+const Board:NextPage = ({ menu, changeMenuUpMain }): JSX.Element=> {
+  useEffect(()=>{
+    changeMenuUpMain()
+  },[])
   return (
     <LayoutMain>
       {menu.menu[0].active && <BoardPage />}
@@ -24,4 +29,8 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, null)(Board);
+const mapDispatchToProps = {
+  changeMenuUpMain,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Board);

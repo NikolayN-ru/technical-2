@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface naviMenuItemProps {
   title: string;
   active: boolean;
@@ -6,4 +8,5 @@ export interface naviMenuItemProps {
   width: number;
   height: number;
   clickNaviMenuItem: (title: string) => void;
+  children?: ReactNode;
 }

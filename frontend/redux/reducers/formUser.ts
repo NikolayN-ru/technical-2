@@ -1,18 +1,18 @@
 interface formUserItemProps {
 	id: number;
 	text: string;
-	hint?: string;
-	value?: string;
-	btn?: boolean;
-	titleBtn?: string;
-	img?: string;
-	placeholder?: string;
-	inputElement?: boolean;
-	select?: string[];
+	hint: string;
+	value: string;
+	btn: boolean;
+	titleBtn: string;
+	img: string;
+	placeholder: string;
+	inputElement: boolean;
+	select: string[];
 }
 
 interface formUserProps {
-	formdata: formUserItemProps[];
+	formdata: Readonly<Partial<formUserItemProps>>[];
 }
 
 const initialState:formUserProps = {
@@ -28,7 +28,12 @@ const initialState:formUserProps = {
 	]
 }
 
-export const formUser = (state = initialState, { type, payload }) => {
+interface formUserStateProps {
+	type: string;
+	payload: any;
+  }
+
+export const formUser = (state = initialState, { type, payload }:formUserStateProps) => {
 	switch (type) {
 		default:
 			return state;

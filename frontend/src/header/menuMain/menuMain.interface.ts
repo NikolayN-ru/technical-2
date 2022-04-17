@@ -7,6 +7,6 @@ export interface menuItemsItemProps {
 }
 
 export interface menuItemsProps {
-  menuItems: menuItemsItemProps[];
+  menuItems?: menuItemsItemProps[];
   children?: ReactNode;
 }

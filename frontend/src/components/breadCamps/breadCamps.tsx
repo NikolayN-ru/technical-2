@@ -8,8 +8,8 @@ const BreadCamps:FC<propsBreadCamps> = ({ camps2 }):JSX.Element => {
   return (
     <div className={styles.breadCamps}>
       {camps &&
-        camps.map((item: string) => (
-          <span className={styles.breadCampsItem} key={item}>
+        camps.map((item: string, id) => (
+          <span className={styles.breadCampsItem} key={id}>
             {item !== 'главная страница' ? " > " + item: item}
           </span>
         ))}

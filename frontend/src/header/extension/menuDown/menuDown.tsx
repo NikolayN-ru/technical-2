@@ -4,11 +4,12 @@ import styles from "./menuDown.module.scss";
 import Image from "next/image";
 import { FC } from "react";
 import { connect } from "react-redux";
+import MenuDrop from "@/src/components/menuDrop";
 
 const menuDown: FC<propMenuDown> = ({ menuDown }): JSX.Element => {
   return (
     <div className={styles.menuDown}>
-      <Image src="/burger.svg" width="14px" height="14px" alt="burger" />
+      <MenuDrop />
       {menuDown.map(({ id, title, icon }: propMenuDownItem) => (
         <ItemMenuDown key={id} title={title} icon={icon} />
       ))}

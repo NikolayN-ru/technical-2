@@ -7,6 +7,10 @@ import {
   CHECK_ITEMS_BTN,
   FETCH_ITEM,
   FETCH_LINK_NAVI_MENU,
+  SERVICE_MENU_DOWN,
+  MAIN_MENU_DOWN,
+  SALE_MENU_DOWN,
+  SERVICE_DATA,
 } from "../actionTypes";
 import { itemProps } from "./actions.interface";
 import { Dispatch } from "redux";
@@ -74,3 +78,27 @@ export const clickNaviMenuItem =
       payload: menu,
     });
   };
+
+export const changeMenuDownService = () => (dispatch) => {
+  dispatch({
+    type: SERVICE_MENU_DOWN,
+  });
+};
+
+export const changeMenuUpMain = () => (dispatch) => {
+  dispatch({
+    type: MAIN_MENU_DOWN,
+  });
+};
+
+export const changeMenuSale = () => (dispatch) => {
+  dispatch({
+    type: SALE_MENU_DOWN,
+  });
+};
+
+export const changeMenuShop = () => (dispatch) => {
+  dispatch({
+    type: SERVICE_DATA,
+  });
+};

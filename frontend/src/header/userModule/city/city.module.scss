@@ -1,10 +1,13 @@
 .city {
-  position: relative;
+  // position: relative;
   height: 30px;
   font-weight: 400;
   font-size: 14px;
-  span {
-    color: var(--grayPrimary);
+  // background-color: var(--grayLite);
+
+  >span {
+    cursor: pointer;
+    color: rgb(182, 90, 90);
   }
 }
 

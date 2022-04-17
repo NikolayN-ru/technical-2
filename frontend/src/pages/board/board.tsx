@@ -15,6 +15,7 @@ const BoardPage: FC = ({
   items,
   showItems,
   checkItems,
+
 }): JSX.Element => {
   useEffect(() => {
     breadCamps(["доска объявлений", "мои объявления"]);
@@ -109,6 +110,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
   breadCamps,
   checkItems,
+  // changeMenuUpMain,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BoardPage);

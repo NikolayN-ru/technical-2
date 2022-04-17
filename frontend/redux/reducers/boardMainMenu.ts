@@ -24,8 +24,8 @@ const initialState:boardMainMenuStateProps = {
 };
 
 interface boardMainMenuProps {
-  type: string,
-  payload: any
+    type: string,
+    payload?: any
 }
 
 export const boardMainMenu = (state = initialState, { type, payload }:boardMainMenuProps) => {

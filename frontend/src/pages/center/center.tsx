@@ -3,12 +3,15 @@ import Image from 'next/image';
 import Btn1 from '@/src/components/btn1';
 import Btn4 from '@/src/components/btn4/btn4';
 import {connect} from 'react-redux';
-import { breadCamps } from "@/redux/actions";
+import { breadCamps, changeMenuDownService } from "@/redux/actions";
 import { useEffect } from 'react';
+import { breadCampsProps } from './center.interface';
 
-const Center = ({breadCamps}) => {
+
+const Center = ({breadCamps, changeMenuDownService}:breadCampsProps) => {
 	useEffect(() => {
 		breadCamps(["cервисный центр",])
+		changeMenuDownService()
 	},[])
   return (
 		  <div className={styles.senter}>
@@ -49,6 +52,7 @@ const Center = ({breadCamps}) => {
 
 const mapDispatchToProps = {
 	breadCamps,
+	changeMenuDownService
 }
 
 export default connect(null, mapDispatchToProps)(Center);	

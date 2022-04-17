@@ -17,3 +17,5 @@ const CenterPage:NextPage = (): JSX.Element=> {
 };
 
 export default CenterPage;
+
+

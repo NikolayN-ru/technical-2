@@ -1,21 +1,21 @@
 version: "3"
 
 services:
-  backend:
-    build: ./backend
-    container_name: back-api
-    command: python /app/manage.py runserver 0.0.0.0:8000
-    restart: unless-stopped
-    volumes:
-      - ./backend:/app
-    ports:
-      - "8000:8000"
-    # environment:
-    #   - PORT=8000
-    depends_on:
-      - db
-    networks:
-      - lb-docker-network
+  # backend:
+  #   build: ./backend
+  #   container_name: back-api
+  #   command: python /app/manage.py runserver 0.0.0.0:8000
+  #   restart: unless-stopped
+  #   volumes:
+  #     - ./backend:/app
+  #   ports:
+  #     - "8000:8000"
+  #   # environment:
+  #   #   - PORT=8000
+  #   depends_on:
+  #     - db
+  #   networks:
+  #     - lb-docker-network
 
   frontend:
     build: ./frontend

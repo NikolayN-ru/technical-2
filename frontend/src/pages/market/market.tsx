@@ -1,11 +1,12 @@
-import { breadCamps } from "@/redux/actions"
+import { breadCamps, changeMenuShop } from "@/redux/actions"
 import { FC, useEffect } from "react"
 import { connect } from "react-redux"
 
 
-const Market: FC= ({breadCamps}): JSX.Element=> {
+const Market: FC= ({breadCamps, changeMenuShop}): JSX.Element=> {
 	useEffect(() => {
 		breadCamps(["магазин",])
+		changeMenuShop()
 	},[])
   return (
 	<div>Market</div>
@@ -14,6 +15,7 @@ const Market: FC= ({breadCamps}): JSX.Element=> {
 
 const mapDispatchToProps = {
 	breadCamps,
+	changeMenuShop
 }
 
 

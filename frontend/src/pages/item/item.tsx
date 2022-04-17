@@ -6,9 +6,9 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { FC, useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { breadCamps, fetchItem } from "redux/actions";
+import { breadCamps, changeMenuUpMain, fetchItem } from "redux/actions";
 
-const ItemPage: FC = ({ fetchItem, data, breadCamps }): JSX.Element=> {
+const ItemPage: FC = ({ fetchItem, data, breadCamps, changeMenuUpMain }): JSX.Element=> {
   const [state, setState] = useState(0);
   const router = useRouter();
   const { item } = router.query;
@@ -21,6 +21,7 @@ const ItemPage: FC = ({ fetchItem, data, breadCamps }): JSX.Element=> {
   useEffect(() => {
     fetchItem(state);
     breadCamps(["доска объявлений", data && data.title]);
+    changeMenuUpMain();
   }, [state, data]);
 
   return (
@@ -93,6 +94,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
   fetchItem,
   breadCamps,
+  changeMenuUpMain,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ItemPage);
