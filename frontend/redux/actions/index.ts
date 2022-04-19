@@ -11,6 +11,8 @@ import {
   MAIN_MENU_DOWN,
   SALE_MENU_DOWN,
   SERVICE_DATA,
+  ADD_CART_ITEM,
+  DEL_CART_ITEM,
 } from "../actionTypes";
 import { itemProps } from "./actions.interface";
 import { Dispatch } from "redux";
@@ -102,3 +104,20 @@ export const changeMenuShop = () => (dispatch) => {
     type: SERVICE_DATA,
   });
 };
+
+export const addCartItem = (id) => (dispatch, getState) => {
+  const idItem = getState().marketData.data.find((item) => item.id === id);
+  dispatch({
+    type: ADD_CART_ITEM,
+    payload: idItem,
+  });
+};
+
+export const delCartItem = (id) => async (dispatch, getState) => {
+  const index = await getState().marketData.data.findIndex((item) => item.id == id);
+  console.log(index)
+  dispatch({
+    type: DEL_CART_ITEM,
+    payload: index
+  })
+}

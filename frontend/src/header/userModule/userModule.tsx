@@ -3,6 +3,7 @@ import styles from "./userModule.module.scss";
 import Image from "next/image";
 import { FC } from "react";
 import { connect } from "react-redux";
+import Cart from "@/src/components/cart";
 
 const UserModule: FC<{city:{}}> = ({city}): JSX.Element => {
   return (
@@ -10,9 +11,9 @@ const UserModule: FC<{city:{}}> = ({city}): JSX.Element => {
       <Image src="/position.svg" width="30px" height="100%" alt="logo" />
       <City city={city} />
       {/* <Image src="/arrow-down.svg" width="16px" height="100%" alt="logo" /> */}
-      <Image src="/don.svg" width="16px" height="100%" alt="logo" />
       <Image src="/message.svg" width="16px" height="100%" alt="logo" />
       <Image src="/like.svg" width="16px" height="100%" alt="logo" />
+      <Cart />
       <Image src="/avatar.png" width="30px" height="30px" alt="logo" />
     </div>
   );

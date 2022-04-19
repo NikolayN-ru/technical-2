@@ -1,23 +1,33 @@
-import { breadCamps, changeMenuShop } from "@/redux/actions"
-import { FC, useEffect } from "react"
-import { connect } from "react-redux"
-import styles from './market.module.scss';
+import styles from "./market.module.scss";
+import MarketItem from "./marketItem";
+import { breadCamps, changeMenuShop } from "@/redux/actions";
+import { FC, useEffect } from "react";
+import { connect } from "react-redux";
 
-const Market: FC= ({breadCamps, changeMenuShop}): JSX.Element=> {
-	useEffect(() => {
-		breadCamps(["магазин",])
-		changeMenuShop()
-	},[])
+const Market: FC = ({ breadCamps, changeMenuShop, marketData }): JSX.Element => {
+  useEffect(() => {
+    breadCamps(["магазин"]);
+    changeMenuShop();
+  }, []);
   return (
-	<div>
-		Market
-	</div>
-  )
+    <div className={styles.market}>
+      <div className={styles.filter}>filter</div>
+      <div className={styles.main}>
+		  {marketData && marketData.data.map((item, id) => <MarketItem key={id} {...item}/>)}
+      </div>
+    </div>
+  );
+};
+
+const mapStateTopProps = ({marketData}) => {
+	return {
+		marketData
+	}
 }
 
 const mapDispatchToProps = {
-	breadCamps,
-	changeMenuShop
-}
+  breadCamps,
+  changeMenuShop,
+};
 
-export default connect(null, mapDispatchToProps)(Market);
+export default connect(mapStateTopProps, mapDispatchToProps)(Market);

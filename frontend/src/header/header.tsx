@@ -6,8 +6,6 @@ import { fetchPhones } from "@/redux/actions";
 import { FC, useEffect } from "react";
 import { connect } from "react-redux";
 
-// const Header: FC = ({ phones, fetchPhones, camps3 }): JSX.Element => {
-
 interface HeaderProps {
   fetchPhones: () => void;
 }

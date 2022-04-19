@@ -1,9 +1,11 @@
 import { boardMainMenu } from "./boardMainMenu";
 import { breadCamps } from "./breadCamps";
+import { cartItems } from "./cartItems";
 import { city } from "./city";
 import { formUser } from "./formUser";
 import { inputQuestion } from "./inputQuestion";
 import { itemData } from "./itemData";
+import { marketData } from "./marketData";
 import { menuDown } from "./menuDown";
 import { mainMenu } from "./menuMain";
 import { mockDataItems } from "./mockDataItems";
@@ -25,4 +27,6 @@ export default () =>
     itemData,
     naviMenu,
     formUser,
+    marketData,
+    cartItems,
   });
