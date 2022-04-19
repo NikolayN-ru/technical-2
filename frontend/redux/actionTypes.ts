@@ -27,3 +27,12 @@ export const SERVICE_DATA:"SERVICE_DATA" = 'SERVICE_DATA';
 export const ADD_CART_ITEM:"ADD_CART_ITEM" = 'ADD_CART_ITEM';
 
 export const DEL_CART_ITEM:"DEL_CART_ITEM" = 'DEL_CART_ITEM';
+
+export const MESSAGE_WRITE:"MESSAGE_WRITE" = 'MESSAGE_WRITE';
+
+// избранное
+export const FAVORITES_ADD:"FAVORITES_ADD" = 'FAVORITES_ADD';
+export const FAVORITES_DEL:"FAVORITES_DEL" = 'FAVORITES_DEL';
+
+// data-item
+export const DATA_ITEM:"DATA_ITEM" = 'DATA_ITEM';

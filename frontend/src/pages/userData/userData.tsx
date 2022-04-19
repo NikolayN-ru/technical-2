@@ -5,7 +5,8 @@ import NaviMenu from "@/src/components/naviMenu";
 import NaviStatistics from "@/src/components/naviStatistics";
 import { FC } from "react";
 import Btn1 from "@/src/components/btn1";
-import {connect} from 'react-redux';
+import {connect, useDispatch} from 'react-redux';
+import { changeDataItem } from "@/redux/actions";
 
 interface formUserItemProps {
 	id: number;
@@ -24,7 +25,10 @@ interface formUserProps {
 	formdata: Readonly<Partial<formUserItemProps>>[];
 }
 
-const UserData: FC<formUserProps> = ({formdata}): JSX.Element => {
+const UserData: FC<formUserProps> = ({formdata, changeDataItem}): JSX.Element => {
+
+  const dispatch = useDispatch()
+
   return (
     <div className={styles.board}>
       <div className={styles.navi}>
@@ -35,8 +39,12 @@ const UserData: FC<formUserProps> = ({formdata}): JSX.Element => {
       <div className={styles.main}>
         <h1>Личные данные</h1>
         <div className={styles.data}>
-		  {formdata.map((item, key) => <InputFormUser key={key} {...item}/>)}
-		<Btn1 title='сохранить' more={true}/>
+		      {formdata.map((item, key) => <InputFormUser key={key} {...item}/>)}
+
+       <div onClick={()=>changeDataItem()}>
+		<Btn1 title='сохранить' more={true} />
+      </div>
+
         </div>
       </div>
     </div>
@@ -48,7 +56,10 @@ const mapStateToProps = ({formUser:{formdata}}:{formUser:formUserProps}) => {
 		formdata
 	}
 }
-export default connect(mapStateToProps, null)(UserData);
+const mapDispatchToProps = {
+  changeDataItem
+}
+export default connect(mapStateToProps, mapDispatchToProps)(UserData);
 
   {/* <InputFormUser text="Имя и фамилия" hint="имя фамилия" />
           <InputFormUser

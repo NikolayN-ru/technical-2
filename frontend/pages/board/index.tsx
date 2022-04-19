@@ -8,10 +8,10 @@ import { NextPage } from "next";
 import { useEffect } from "react";
 import { connect } from "react-redux";
 
-const Board:NextPage = ({ menu, changeMenuUpMain }): JSX.Element=> {
-  useEffect(()=>{
-    changeMenuUpMain()
-  },[])
+const Board: NextPage = ({ menu, changeMenuUpMain }): JSX.Element => {
+  useEffect(() => {
+    changeMenuUpMain();
+  }, []);
   return (
     <LayoutMain>
       {menu.menu[0].active && <BoardPage />}
@@ -31,6 +31,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
   changeMenuUpMain,
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Board);

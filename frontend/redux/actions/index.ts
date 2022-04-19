@@ -13,6 +13,10 @@ import {
   SERVICE_DATA,
   ADD_CART_ITEM,
   DEL_CART_ITEM,
+  MESSAGE_WRITE,
+  FAVORITES_DEL,
+  FAVORITES_ADD,
+  DATA_ITEM,
 } from "../actionTypes";
 import { itemProps } from "./actions.interface";
 import { Dispatch } from "redux";
@@ -115,9 +119,40 @@ export const addCartItem = (id) => (dispatch, getState) => {
 
 export const delCartItem = (id) => async (dispatch, getState) => {
   const index = await getState().marketData.data.findIndex((item) => item.id == id);
-  console.log(index)
+  // console.log(index)
   dispatch({
     type: DEL_CART_ITEM,
     payload: index
+  })
+}
+
+export const messageWrite = (m: string) => (dispatch) => {
+  dispatch({
+    type: MESSAGE_WRITE,
+    payload: m
+  })
+}
+
+export const favoritesAdd = (item) => (dispatch) => {
+  console.log(item, 'TYT')
+  dispatch({
+    type: FAVORITES_ADD,
+    payload: item
+  })
+}
+
+export const favoritesDel = (id) => (dispatch, getState) => {
+  const index = getState().favoritesData.favor.findIndex((item) => item.id == id);
+  dispatch({
+    type: FAVORITES_DEL,
+    payload: index
+  })
+}
+
+export const changeDataItem = (data=[]) => (dispatch, getState) => {
+  console.log(data, 'DATA_ITEM')
+  dispatch({
+    type: DATA_ITEM,
+    payload: data
   })
 }

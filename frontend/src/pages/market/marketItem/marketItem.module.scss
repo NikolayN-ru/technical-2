@@ -50,5 +50,11 @@
     position: absolute;
     top: 20px;
     right: 20px;
+    transition: 0.3s all;
+    cursor: pointer;
+  }
+
+  .like:hover {
+    transform: scale(1.5);
   }
 }

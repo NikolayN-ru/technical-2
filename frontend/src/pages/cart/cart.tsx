@@ -9,11 +9,11 @@ import {useSelector, useDispatch} from 'react-redux'
 const CartPage: FC = ({ cartItems, delCartItem }): JSX.Element => {
   const store2 = useSelector(store=>store)
   const dispatch = useDispatch()
-  console.log(store2, 'useSelectoruseSelectoruseSelector')
+  // console.log(store2, 'useSelectoruseSelectoruseSelector')
   return (
     <div className={styles.cart}>
       cart-pages <br />
-      {console.log(cartItems.cart, "cartItemems.cart")}
+      {/* {console.log(cartItems.cart, "cartItemems.cart")} */}
       {cartItems.cart.length ? " yes " : " товаров нет"}
       {cartItems.cart.length &&
         cartItems.cart.map(({ id, title, price }, key) => (

@@ -6,13 +6,19 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
+import cerateSagaMiddleware from 'redux-saga';
+import rootSaga from '../redux/sagas';
 
-const middlewares = [thunk];
+const sagaMiddaleware = cerateSagaMiddleware();
+
+const middlewares = [sagaMiddaleware, thunk,];
 
 const store = createStore(
   createRootReduser(),
-  composeWithDevTools(applyMiddleware(...middlewares))
+  composeWithDevTools(applyMiddleware(...middlewares,))
 );
+
+sagaMiddaleware.run(rootSaga);
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
