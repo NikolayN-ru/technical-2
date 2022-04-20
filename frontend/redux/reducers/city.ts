@@ -1,46 +1,11 @@
 import { MAIN_CITY } from "../actionTypes";
+import { actionProps } from "./interface";
+import { cityStateData } from "mockData/cityData";
+import { cityStateProps } from "mockData/cityData/cityData.interface";
 
-interface cityStateProps {
-  mainCity: string;
-  city: string[];
-}
+const initialState: cityStateProps = cityStateData;
 
-const initialState: cityStateProps = {
-  mainCity: "moskov",
-  city: [
-    "Москва",
-    "Санкт-Петербург",
-    "Омск",
-    "Абакан",
-    "Азов",
-    "Александров",
-    "Алексин",
-    "Альметьевск",
-    "Анапа",
-    "Ангарск",
-    "Апатиты",
-    "Арзамас",
-    "Армавир",
-    "Арсеньев",
-    "Артем",
-    "Архангельск",
-    "Асбест",
-    "Астрахань",
-    "Ачинск",
-    "Балаково",
-    "Балахна",
-    "Балашиха",
-    "Балашов",
-    "Барнаул",
-  ],
-};
-
-interface cityProps {
-  type: string;
-  payload: any;
-}
-
-export const city = (state = initialState, { type, payload }: cityProps) => {
+export const city = (state = initialState, { type, payload }: actionProps) => {
   switch (type) {
     case MAIN_CITY:
       return {

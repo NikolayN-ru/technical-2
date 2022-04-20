@@ -4,6 +4,7 @@ import {
   DEL_CART_ITEM,
   WRITE_CART_VALUE,
 } from "../actionTypes";
+import { actionProps } from "./interface";
 
 const initialState = {
   cart: [],
@@ -13,7 +14,7 @@ const initialState = {
   // valueBonus: "",
 };
 
-export const cartItems = (state = initialState, { type, payload }) => {
+export const cartItems = (state = initialState, { type, payload }:actionProps) => {
   switch (type) {
     case ADD_CART_ITEM:
       const totalPrice = (state.total += payload.price);

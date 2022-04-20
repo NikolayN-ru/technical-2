@@ -1,20 +1,18 @@
 import { BREAD_CAMPS_REPLASE } from "../actionTypes";
+import { actionProps } from "./interface";
 
 interface breadCampsStateProps {
-  camps: string[]; 
+  camps: string[];
 }
 
-const initialState:breadCampsStateProps = {
-  camps: [
-    "главная страница", "категории", "телефоны и аксесуары", "смартфоны"],
+const initialState: breadCampsStateProps = {
+  camps: ["главная страница", "категории", "телефоны и аксесуары", "смартфоны"],
 };
 
-interface breadCampsProps {
-  type: string,
-  payload: any
-}
-
-export const breadCamps = (state = initialState, { type, payload }:breadCampsProps) => {
+export const breadCamps = (
+  state = initialState,
+  { type, payload }: actionProps
+) => {
   switch (type) {
     case BREAD_CAMPS_REPLASE:
       return {

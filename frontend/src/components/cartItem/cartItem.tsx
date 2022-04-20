@@ -3,10 +3,11 @@ import { delCartItem } from "@/redux/actions";
 import Image from "next/image";
 import { connect } from "react-redux";
 
-const CartItem = ({ id, title, price, delCartItem }) => {
+const CartItem = ({ id, title, price, img, delCartItem }) => {
   return (
     <div className={styles.itemsDescItem}>
-      <Image src="/phone22.png" width="77" height="80" alt="iphone" />
+      {/* <Image src="/phone22.png" width="77" height="80" alt="iphone" /> */}
+      <Image src={img} width="77" height="80" alt="iphone" />
       <span>{title}</span>
       <span>{price} ₽</span>
       <button onClick={() => delCartItem(id)}>

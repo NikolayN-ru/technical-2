@@ -5,14 +5,22 @@ import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { FC, useEffect, useState } from "react";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import { breadCamps, changeMenuUpMain, fetchItem } from "redux/actions";
 
+// data2: state.marketData.data,
+
 const ItemPage: FC = ({ fetchItem, data, breadCamps, changeMenuUpMain }): JSX.Element=> {
+  // const data2 = useSelector(({marketData}) => marketData.data)
   const [state, setState] = useState(0);
   const router = useRouter();
   const { item } = router.query;
   const item2 = Number(item);
+
+  console.log(data)
+  // if(!data){
+  //   data = data2
+  // }
 
   useEffect(() => {
     setState(item2);
@@ -33,7 +41,7 @@ const ItemPage: FC = ({ fetchItem, data, breadCamps, changeMenuUpMain }): JSX.El
       <div className={styles.blockItem}>
         <div className={styles.descriptionItem}>
           <div className={styles.itemPhotoItem}>
-            <Image src="/124.png" width="430" height="430" alt="item" />
+            <Image src='/124.png' width="430" height="430" alt="item" />
             <div className={styles.itemPhotoLike}>
               <Image src="/like.svg" width="23px" height="20px" alt="like" />
               {/* <Image src="/likeF.svg" width="23" height="20" alt="like" /> */}

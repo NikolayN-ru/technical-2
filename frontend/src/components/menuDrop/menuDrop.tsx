@@ -53,10 +53,6 @@ const data = [
   {id: 9, title:"Транспорт", url:"", ico:"", dataItem:[]},
   {id: 10, title:"Автотовары", url:"", ico:"", dataItem:[]},
   {id: 11, title:"Недвижимость", url:"", ico:"", dataItem:[]},
-  // {id: 12, title:"Работа", url:"", ico:"", dataItem:[]},
-  // {id: 13, title:"Услуги", url:"", ico:"", dataItem:[]},
-  // {id: 14, title:"Для бизнеса", url:"", ico:"", dataItem:[]},
-  // {id: 15, title:"Отдам даром", url:"", ico:"", dataItem:[]},
 ]
 
 

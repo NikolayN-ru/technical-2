@@ -1,10 +1,11 @@
 import { FAVORITES_ADD, FAVORITES_DEL } from "../actionTypes";
+import { actionProps } from "./interface";
 
 const initialState = {
   favor: [],
 };
 
-export const favoritesData = (state = initialState, { type, payload }) => {
+export const favoritesData = (state = initialState, { type, payload }:actionProps) => {
   switch (type) {
     case FAVORITES_ADD:
       return { favor: [...state.favor, payload] };

@@ -1,4 +1,6 @@
-export const rebootItemsData = [
+import { rebootItemsDataProps } from "./centerData.interrface";
+
+export const rebootItemsData: rebootItemsDataProps[] = [
   { title: "Apple", img: "/center/1.png" },
   { title: "Телефоны", img: "/center/2.png" },
   { title: "Планшеты", img: "/center/3.png" },
@@ -13,7 +15,7 @@ export const rebootItemsData = [
   { title: "Инструменты", img: "/center/12.png" },
 ];
 
-export const malfunctions = [
+export const malfunctions: string[] = [
   "Не работает гнездо зарядки",
   "Не работает аккумулятор",
   "Не работает динамик",

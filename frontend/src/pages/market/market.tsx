@@ -11,7 +11,7 @@ const Market: FC = ({ breadCamps, changeMenuShop, marketData }): JSX.Element => 
   }, []);
   return (
     <div className={styles.market}>
-      <div className={styles.filter}>filter</div>
+      <div className={styles.filter}>...filter-block-prosessing</div>
       <div className={styles.main}>
 		  {marketData && marketData.data.map((item, id) => <MarketItem key={id} {...item}/>)}
       </div>

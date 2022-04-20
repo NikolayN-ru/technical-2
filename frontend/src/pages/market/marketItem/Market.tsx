@@ -1,14 +1,19 @@
 import styles from "./marketItem.module.scss";
 import { addCartItem, favoritesAdd } from "@/redux/actions";
 import Image from "next/image";
+import Link from "next/link";
 import { connect } from "react-redux";
 
 const MarketItem = (props: { favoritesAdd }) => {
-  const { id, title, price, addCartItem, favoritesAdd } = props;
+  const { id, title, price, img, addCartItem, favoritesAdd } = props;
 
   return (
     <div className={styles.marketItem}>
-      <Image src="/23.png" width="116" height="196" alt="star" />
+      <Link href={`/${Number(id)}`}>
+        <a>
+          <Image src={img} width="116" height="186" alt="star" />
+        </a>
+      </Link>
       <p>Смартфон</p>
       <span>{title}</span>
       <div className={styles.marketItemDesc}>
