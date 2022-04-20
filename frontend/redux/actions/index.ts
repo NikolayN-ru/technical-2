@@ -17,6 +17,9 @@ import {
   FAVORITES_DEL,
   FAVORITES_ADD,
   DATA_ITEM,
+  BONUS_CART_ITEM,
+  WRITE_CART_VALUE,
+  USER_NUMBER,
 } from "../actionTypes";
 import { itemProps } from "./actions.interface";
 import { Dispatch } from "redux";
@@ -149,10 +152,31 @@ export const favoritesDel = (id) => (dispatch, getState) => {
   })
 }
 
-export const changeDataItem = (data=[]) => (dispatch, getState) => {
-  console.log(data, 'DATA_ITEM')
+export const changeDataItem = (data=[]) => (dispatch) => {
   dispatch({
     type: DATA_ITEM,
     payload: data
+  })
+}
+
+export const bonusCartItem = (bonus) => (dispatch) => {
+  dispatch({
+    type: BONUS_CART_ITEM,
+    payload: bonus
+  })
+}
+
+export const writeValue = (value) => (dispatch) => {
+  // console.log(value, 'writeValue')
+dispatch({
+  type: WRITE_CART_VALUE,
+  payload: value
+})
+}
+
+export const userNumberData= (value) => (dispatch) => {
+  dispatch({
+    type: USER_NUMBER,
+    payload: value
   })
 }

@@ -28,6 +28,10 @@ export const ADD_CART_ITEM:"ADD_CART_ITEM" = 'ADD_CART_ITEM';
 
 export const DEL_CART_ITEM:"DEL_CART_ITEM" = 'DEL_CART_ITEM';
 
+export const BONUS_CART_ITEM:"BONUS_CART_ITEM" = "BONUS_CART_ITEM";
+
+export const WRITE_CART_VALUE:"WRITE_CART_VALUE" = "WRITE_CART_VALUE";
+
 export const MESSAGE_WRITE:"MESSAGE_WRITE" = 'MESSAGE_WRITE';
 
 // избранное
@@ -36,3 +40,6 @@ export const FAVORITES_DEL:"FAVORITES_DEL" = 'FAVORITES_DEL';
 
 // data-item
 export const DATA_ITEM:"DATA_ITEM" = 'DATA_ITEM';
+
+//userData
+export const USER_NUMBER:"USER_NUMBER" = "USER_NUMBER";

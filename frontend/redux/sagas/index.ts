@@ -1,9 +1,11 @@
 import {
   ADD_CART_ITEM,
+  BONUS_CART_ITEM,
   DATA_ITEM,
   DEL_CART_ITEM,
   FAVORITES_ADD,
   FAVORITES_DEL,
+  USER_NUMBER,
 } from "../actionTypes";
 import { messageWrite } from "../actions";
 import {
@@ -21,7 +23,7 @@ const delay = (time: number) =>
   });
 
 export function* messageDisplay(message: string) {
-  yield put(messageWrite(message));
+  yield put<any>(messageWrite(message));
   yield delay(2);
   yield put(messageWrite(""));
 }
@@ -45,8 +47,16 @@ export function* workerSagafavoritesDel() {
   yield messageDisplay("товар удален из избранного");
 }
 
-export function* workerSagaDataItem(){
-	yield messageDisplay("данные пользователя в процессе изменения")
+export function* workerSagaDataItem() {
+  yield messageDisplay("данные пользователя в процессе изменения");
+}
+
+export function* workerSagaBonus() {
+  yield messageDisplay("промокод применен");
+}
+
+export function* workerSagaUserNumber() {
+  yield messageDisplay("мы вам перезвоним");
 }
 
 export function* watchClickSaga() {
@@ -55,6 +65,8 @@ export function* watchClickSaga() {
   yield takeLatest(FAVORITES_ADD, workerSagafavoritesAdd);
   yield takeLatest(FAVORITES_DEL, workerSagafavoritesDel);
   yield takeLatest(DATA_ITEM, workerSagaDataItem);
+  yield takeLatest(BONUS_CART_ITEM, workerSagaBonus);
+  yield takeLatest(USER_NUMBER, workerSagaUserNumber);
 }
 
 export default function* rootSaga() {

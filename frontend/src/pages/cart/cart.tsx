@@ -1,28 +1,56 @@
 import styles from "./cart.module.scss";
-import { delCartItem } from "@/redux/actions";
-import { FC } from "react";
+import { bonusCartItem, breadCamps, delCartItem } from "@/redux/actions";
+import Btn1 from "@/src/components/btn1";
+import CartItem from "@/src/components/cartItem";
+import InputFormUser from "@/src/components/inputFormUser/inputFormUser";
+import Image from "next/image";
+import Link from "next/link";
+import { FC, useEffect, useState } from "react";
 import { connect } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
-import {useSelector, useDispatch} from 'react-redux'
+const CartPage: FC = ({ cartItems, delCartItem, breadCamps, bonusCartItem }): JSX.Element => {
+  const [stateValue, setStateValue] = useState<string>('');
+  const items = useSelector(({ cartItems }) => cartItems.cart);
+  const cartData = useSelector(({ cartItems })=>cartItems);
+  // const dispatch = useDispatch();
+  useEffect(() => {
+    breadCamps(["корзина"]);
+  }, []);
 
-
-const CartPage: FC = ({ cartItems, delCartItem }): JSX.Element => {
-  const store2 = useSelector(store=>store)
-  const dispatch = useDispatch()
-  // console.log(store2, 'useSelectoruseSelectoruseSelector')
+  const valueInput = (value) => {
+    setStateValue(value)
+  }
   return (
     <div className={styles.cart}>
-      cart-pages <br />
-      {/* {console.log(cartItems.cart, "cartItemems.cart")} */}
-      {cartItems.cart.length ? " yes " : " товаров нет"}
-      {cartItems.cart.length &&
-        cartItems.cart.map(({ id, title, price }, key) => (
-          <li key={key}>
-            {id}-{title}-{price}
-            <button onClick={() => delCartItem(id)}>del</button>
-            <button onClick={()=>dispatch(delCartItem(id))}>DELETE</button>
-          </li>
-        ))}
+      <h1>Корзина</h1>
+      <div className={styles.cartItems}>
+        <div className={styles.itemsDesc}>
+          {items.length ? (
+            items.map((item, id) => <CartItem {...item}/>
+            
+            )
+            ) : (
+              <p>корзина пустa </p>
+              )}
+        </div>
+        <div className={styles.promo}>
+          <InputFormUser hint="Промокод" valueInput={valueInput} placeholder="секретный промокод: bonus"/>
+          <div onClick={()=>bonusCartItem(stateValue)}>
+          <Btn1 title="Применить" more={true} />
+          </div>
+          <div className={styles.sale}>
+            <span>Скидки и бонусы</span>
+            <span>- {cartData.sale} ₽</span>
+          </div>
+          <div className={styles.line}></div>
+          <div className={styles.coast}>
+            <span>Всего</span>
+            <span>{cartData.total} ₽</span>
+          </div>
+        </div>
+              {items.length ? <Btn1 title="Перейти к оформлению" more={true} /> : null}
+      </div>
     </div>
   );
 };
@@ -35,6 +63,8 @@ const mapStateToProps = ({ cartItems }) => {
 
 const mapDispatchToProps = {
   delCartItem,
+  breadCamps,
+  bonusCartItem
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartPage);

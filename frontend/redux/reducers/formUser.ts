@@ -1,3 +1,5 @@
+import { USER_NUMBER } from "../actionTypes";
+
 interface formUserItemProps {
 	id: number;
 	text: string;
@@ -35,6 +37,8 @@ interface formUserStateProps {
 
 export const formUser = (state = initialState, { type, payload }:formUserStateProps) => {
 	switch (type) {
+		case USER_NUMBER:
+			return state
 		default:
 			return state;
 	}
