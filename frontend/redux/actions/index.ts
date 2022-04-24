@@ -120,14 +120,11 @@ export const addCartItem = (id: number) => (dispatch, getState) => {
   });
 };
 
-export const delCartItem = (id: number) => async (dispatch, getState) => {
-  const index = await getState().marketData.data.findIndex(
-    (item) => item.id == id
-  );
-  dispatch({
+export const delCartItem = (id: number) => {
+  return {
     type: DEL_CART_ITEM,
-    payload: index,
-  });
+    payload: id,
+  };
 };
 
 export const messageWrite = (m: string) => (dispatch) => {
@@ -163,11 +160,11 @@ export const changeDataItem =
     });
   };
 
-export const bonusCartItem = (bonus: string) => (dispatch) => {
-  dispatch({
+export const bonusCartItem = (bonus: string) => {
+  return {
     type: BONUS_CART_ITEM,
     payload: bonus,
-  });
+  };
 };
 
 export const writeValue = (value: string) => (dispatch) => {
@@ -177,9 +174,9 @@ export const writeValue = (value: string) => (dispatch) => {
   });
 };
 
-export const userNumberData = (value: string) => (dispatch) => {
-  dispatch({
+export const userNumberData = (value: string) => {
+  return {
     type: USER_NUMBER,
     payload: value,
-  });
+  }
 };

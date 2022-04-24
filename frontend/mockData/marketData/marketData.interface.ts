@@ -1,4 +1,4 @@
-interface marketDataItemProps {
+export interface marketDataItemProps {
   id: number;
   title: string;
   color: string;

@@ -7,10 +7,12 @@ import cn from "classnames";
 import { malfunctions, rebootItemsData } from "mockData/centerPage";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 
-const Center = ({ breadCamps, changeMenuDownService, userNumberData }: breadCampsProps) => {
+const Center = ({ breadCamps, changeMenuDownService }: breadCampsProps) => {
   const [state, setState] = useState<boolean>(false);
+  const dispatch = useDispatch()
+
   useEffect(() => {
     breadCamps(["cервисный центр"]);
     changeMenuDownService();
@@ -18,8 +20,9 @@ const Center = ({ breadCamps, changeMenuDownService, userNumberData }: breadCamp
 
   const callToAction = () => {
 	setState((prev) => !prev);
-	userNumberData()
+	dispatch(userNumberData('999-455'))
   }
+
   return (
     <div className={styles.senter}>
       <div className={styles.slider}>
@@ -131,7 +134,6 @@ const Center = ({ breadCamps, changeMenuDownService, userNumberData }: breadCamp
 const mapDispatchToProps = {
   breadCamps,
   changeMenuDownService,
-  userNumberData,
 };
 
 export default connect(null, mapDispatchToProps)(Center);

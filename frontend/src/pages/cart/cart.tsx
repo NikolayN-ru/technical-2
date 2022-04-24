@@ -6,14 +6,16 @@ import InputFormUser from "@/src/components/inputFormUser/inputFormUser";
 import Image from "next/image";
 import Link from "next/link";
 import { FC, useEffect, useState } from "react";
-import { connect } from "react-redux";
+import { connect, useStore } from "react-redux";
 import { useSelector, useDispatch } from "react-redux";
+import { BONUS_CART_ITEM } from "@/redux/actionTypes";
 
-const CartPage: FC = ({ cartItems, delCartItem, breadCamps, bonusCartItem }): JSX.Element => {
+const CartPage: FC = ({ cartItems, breadCamps }): JSX.Element => {
   const [stateValue, setStateValue] = useState<string>('');
   const items = useSelector(({ cartItems }) => cartItems.cart);
-  const cartData = useSelector(({ cartItems })=>cartItems);
-  // const dispatch = useDispatch();
+  const cartData = useSelector(({ cartItems }) => cartItems);
+  const dispatch = useDispatch();
+
   useEffect(() => {
     breadCamps(["корзина"]);
   }, []);
@@ -21,6 +23,7 @@ const CartPage: FC = ({ cartItems, delCartItem, breadCamps, bonusCartItem }): JS
   const valueInput = (value) => {
     setStateValue(value)
   }
+
   return (
     <div className={styles.cart}>
       <h1>Корзина</h1>
@@ -36,7 +39,7 @@ const CartPage: FC = ({ cartItems, delCartItem, breadCamps, bonusCartItem }): JS
         </div>
         <div className={styles.promo}>
           <InputFormUser hint="Промокод" valueInput={valueInput} placeholder="секретный промокод: bonus"/>
-          <div onClick={()=>bonusCartItem(stateValue)}>
+          <div onClick={() => dispatch(bonusCartItem(stateValue))}>
           <Btn1 title="Применить" more={true} />
           </div>
           <div className={styles.sale}>
@@ -62,9 +65,7 @@ const mapStateToProps = ({ cartItems }) => {
 };
 
 const mapDispatchToProps = {
-  delCartItem,
   breadCamps,
-  bonusCartItem
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartPage);
