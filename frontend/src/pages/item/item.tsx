@@ -5,7 +5,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { FC, useEffect, useState } from "react";
-import { connect, useSelector } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 import { breadCamps, changeMenuUpMain, fetchItem } from "redux/actions";
 
 // data2: state.marketData.data,
@@ -17,10 +17,8 @@ const ItemPage: FC = ({ fetchItem, data, breadCamps, changeMenuUpMain }): JSX.El
   const { item } = router.query;
   const item2 = Number(item);
 
-  console.log(data)
-  // if(!data){
-  //   data = data2
-  // }
+  // const data3 = useSelector(({itemData}) => itemData.data);
+  // state.itemData.data,
 
   useEffect(() => {
     setState(item2);

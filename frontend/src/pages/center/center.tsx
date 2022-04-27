@@ -9,13 +9,13 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { connect, useDispatch } from "react-redux";
 
-const Center = ({ breadCamps, changeMenuDownService }: breadCampsProps) => {
+const Center = ({ breadCamps }: breadCampsProps) => {
   const [state, setState] = useState<boolean>(false);
   const dispatch = useDispatch()
 
   useEffect(() => {
     breadCamps(["cервисный центр"]);
-    changeMenuDownService();
+    dispatch(changeMenuDownService());
   }, []);
 
   const callToAction = () => {
@@ -133,7 +133,6 @@ const Center = ({ breadCamps, changeMenuDownService }: breadCampsProps) => {
 
 const mapDispatchToProps = {
   breadCamps,
-  changeMenuDownService,
 };
 
 export default connect(null, mapDispatchToProps)(Center);

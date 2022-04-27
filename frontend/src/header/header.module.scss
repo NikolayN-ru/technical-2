@@ -5,13 +5,25 @@
   z-index: 10;
   background-color: #fff;
   padding-bottom: 10px;
+  position: relative;
 
   .topBtn {
   }
 
   .menu {
     display: flex;
+    flex-wrap: wrap;
+    padding: 0 20px 20px;
+    gap: 10px;
     justify-content: space-between;
+  }
+
+  .btnMobile {
+    position: absolute;
+    display: none;
+    top: 60%;
+    right: 3%;
+    // visibility: hidden;
   }
 }
 
@@ -22,4 +34,21 @@
     #00c65e 26.28%,
     rgba(0, 198, 94, 0) 101.66%
   );
+}
+
+@media (max-width: 984px) {
+  .menu {
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrap {
+    .btnMobile {
+      display: block;
+    }
+  }
+  .menu {
+    display: none;
+  }
 }

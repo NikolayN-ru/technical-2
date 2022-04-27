@@ -1,4 +1,5 @@
 .breadCamps {
+  padding-left: 20px;
   color: var(--grayMidle);
   margin: 20px 0;
   cursor: pointer;
@@ -10,4 +11,10 @@
 
 .breadCampsItem:hover {
   color: var(--grayPrimary);
+}
+
+@media (max-width: 768px) {
+  .breadCamps {
+    display: none;
+  }
 }

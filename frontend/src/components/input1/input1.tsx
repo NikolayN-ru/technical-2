@@ -3,10 +3,11 @@ import styles from "./input1.module.scss";
 import { inputQuestion } from "@/redux/actions/index";
 import Image from "next/image";
 import { FC, useState } from "react";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 
 const Input1: FC<propsInput1> = ({ inputQuestion }): JSX.Element => {
   const [state, setState] = useState<string>("");
+  const dispatch = useDispatch()
 
   const changeInput = (e: {
     target: { value: React.SetStateAction<string> };
@@ -15,7 +16,7 @@ const Input1: FC<propsInput1> = ({ inputQuestion }): JSX.Element => {
   };
 
   const submit = () => {
-    inputQuestion(state);
+    dispatch(inputQuestion(state));
   };
 
   return (

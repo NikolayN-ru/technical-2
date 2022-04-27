@@ -1,6 +1,7 @@
 .market {
   display: grid;
-  grid-template-columns: 270px 1fr;
+  grid-template-columns: 240px 1fr;
+  grid-auto-flow: row;
 
   .main {
     display: flex;

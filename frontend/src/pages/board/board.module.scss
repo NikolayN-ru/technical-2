@@ -39,3 +39,17 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .board {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: 20px;
+  }
+
+  .navi {
+    width: 100%;
+  }
+}

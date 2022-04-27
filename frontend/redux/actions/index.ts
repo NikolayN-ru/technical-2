@@ -25,10 +25,10 @@ import { itemProps } from "./actions.interface";
 import { Dispatch } from "redux";
 import { countItemsBtn } from "redux/selectors";
 
-export const fetchPhones = () => async (dispatch: Dispatch) => {
-  dispatch({
+export const fetchPhones = () => {
+  return {
     type: FETCH_PHONES_SUCCESS,
-  });
+  };
 };
 
 export const mainCity = (item: string) => async (dispatch: Dispatch) => {
@@ -38,11 +38,11 @@ export const mainCity = (item: string) => async (dispatch: Dispatch) => {
   });
 };
 
-export const inputQuestion = (question: string) => (dispatch: Dispatch) => {
-  dispatch({
+export const inputQuestion = (question: string) => {
+  return {
     type: INPUT_QUESTION,
     payload: question,
-  });
+  }
 };
 
 export const breadCamps = (items: string[]) => (dispatch: Dispatch) => {
@@ -88,10 +88,10 @@ export const clickNaviMenuItem =
     });
   };
 
-export const changeMenuDownService = () => (dispatch) => {
-  dispatch({
+export const changeMenuDownService = () => {
+  return {
     type: SERVICE_MENU_DOWN,
-  });
+  };
 };
 
 export const changeMenuUpMain = () => (dispatch) => {
@@ -100,10 +100,10 @@ export const changeMenuUpMain = () => (dispatch) => {
   });
 };
 
-export const changeMenuSale = () => (dispatch) => {
-  dispatch({
+export const changeMenuSale = () => {
+  return {
     type: SALE_MENU_DOWN,
-  });
+  };
 };
 
 export const changeMenuShop = () => (dispatch) => {
@@ -151,14 +151,12 @@ export const favoritesDel = (id: number) => (dispatch, getState) => {
   });
 };
 
-export const changeDataItem =
-  (data = []) =>
-  (dispatch) => {
-    dispatch({
-      type: DATA_ITEM,
-      payload: data,
-    });
+export const changeDataItem = (data = []) => {
+  return {
+    type: DATA_ITEM,
+    payload: data,
   };
+};
 
 export const bonusCartItem = (bonus: string) => {
   return {
@@ -178,5 +176,5 @@ export const userNumberData = (value: string) => {
   return {
     type: USER_NUMBER,
     payload: value,
-  }
+  };
 };

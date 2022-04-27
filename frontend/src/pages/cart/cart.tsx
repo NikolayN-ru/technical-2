@@ -3,14 +3,11 @@ import { bonusCartItem, breadCamps, delCartItem } from "@/redux/actions";
 import Btn1 from "@/src/components/btn1";
 import CartItem from "@/src/components/cartItem";
 import InputFormUser from "@/src/components/inputFormUser/inputFormUser";
-import Image from "next/image";
-import Link from "next/link";
 import { FC, useEffect, useState } from "react";
 import { connect, useStore } from "react-redux";
 import { useSelector, useDispatch } from "react-redux";
-import { BONUS_CART_ITEM } from "@/redux/actionTypes";
 
-const CartPage: FC = ({ cartItems, breadCamps }): JSX.Element => {
+const CartPage: FC = ({ breadCamps }): JSX.Element => {
   const [stateValue, setStateValue] = useState<string>('');
   const items = useSelector(({ cartItems }) => cartItems.cart);
   const cartData = useSelector(({ cartItems }) => cartItems);
@@ -58,14 +55,14 @@ const CartPage: FC = ({ cartItems, breadCamps }): JSX.Element => {
   );
 };
 
-const mapStateToProps = ({ cartItems }) => {
-  return {
-    cartItems: cartItems,
-  };
-};
+// const mapStateToProps = ({ cartItems }) => {
+//   return {
+//     cartItems: cartItems,
+//   };
+// };
 
 const mapDispatchToProps = {
   breadCamps,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CartPage);
+export default connect(null, mapDispatchToProps)(CartPage);

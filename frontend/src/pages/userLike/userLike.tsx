@@ -3,8 +3,9 @@ import styles from "./userLike.module.scss";
 import UserLikeItem from "./userLikeItem";
 import { useSelector } from "react-redux";
 import Link from 'next/link';
+import { FC } from "react";
 
-const UserLike = () => {
+const UserLike: FC = () => {
   const state = useSelector(({ favoritesData }) => favoritesData.favor);
   console.log(state);
   return (

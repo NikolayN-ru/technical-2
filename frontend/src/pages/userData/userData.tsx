@@ -25,7 +25,7 @@ interface formUserProps {
 	formdata: Readonly<Partial<formUserItemProps>>[];
 }
 
-const UserData: FC<formUserProps> = ({formdata, changeDataItem}): JSX.Element => {
+const UserData: FC<formUserProps> = ({formdata}): JSX.Element => {
 
   const dispatch = useDispatch()
 
@@ -41,7 +41,7 @@ const UserData: FC<formUserProps> = ({formdata, changeDataItem}): JSX.Element =>
         <div className={styles.data}>
 		      {formdata.map((item, key) => <InputFormUser key={key} {...item}/>)}
 
-       <div onClick={()=>changeDataItem()}>
+       <div onClick={()=>dispatch(changeDataItem())}>
 		<Btn1 title='сохранить' more={true} />
       </div>
 

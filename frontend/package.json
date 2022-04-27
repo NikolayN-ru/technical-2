@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.1",
     "classnames": "^2.3.1",
     "next": "12.1.4",
     "nextjs-progressbar": "^0.0.14",
