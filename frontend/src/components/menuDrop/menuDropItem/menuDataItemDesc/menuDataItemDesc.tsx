@@ -1,4 +1,4 @@
-import styles from './MenuItemDataDesc.module.scss';
+import styles from './menuItemDataDesc.module.scss';
 
 const MenuItemDataDesc = ({dataItem}:any) => {
   return (

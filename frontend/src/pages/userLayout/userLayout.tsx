@@ -1,4 +1,4 @@
-import styles from "./UserLayout.module.scss";
+import styles from "./userLayout.module.scss";
 import NaviData from "@/src/components/naviData";
 import NaviMenu from "@/src/components/naviMenu";
 import NaviStatistics from "@/src/components/naviStatistics";

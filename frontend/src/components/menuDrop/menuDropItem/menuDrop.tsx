@@ -1,4 +1,4 @@
-import styles from "./MenuDropItem.module.scss";
+import styles from "./menuDropItem.module.scss";
 import Image from "next/image";
 import MenuItemDataDesc from "./menuDataItemDesc";
 
