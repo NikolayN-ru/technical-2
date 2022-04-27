@@ -9,7 +9,7 @@ import NaviStatistics from "@/src/components/naviStatistics";
 import React, { FC, useEffect } from "react";
 import { connect } from "react-redux";
 
-const BoardPage: FC = ({
+const BoardPage: FC<any> = ({
   breadCamps,
   stateItems,
   items,
@@ -30,7 +30,7 @@ const BoardPage: FC = ({
       </div>
       <div className={styles.main}>
         <div className={styles.mainMenu}>
-          {stateItems.items.map((item) => (
+          {stateItems.items.map((item:any) => (
             <Btn3
               key={item.id}
               {...item}
@@ -99,7 +99,7 @@ const BoardPage: FC = ({
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: any) => {
   return {
     stateItems: state.boardMainMenu,
     items: state.mockDataItems.data,

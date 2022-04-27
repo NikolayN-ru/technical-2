@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { connect } from "react-redux";
 
-const MarketItem = (props: { favoritesAdd }) => {
-  const { id, title, price, img, addCartItem, favoritesAdd } = props;
+const MarketItem = (props: { favoritesAdd:any }) => {
+  const { id, title, price, img, addCartItem, favoritesAdd }:any = props;
 
   return (
     <div className={styles.marketItem}>

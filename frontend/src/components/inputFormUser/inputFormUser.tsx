@@ -2,8 +2,8 @@ import { connect } from "react-redux";
 import Btn4 from "../btn4/btn4";
 import styles from "./inputFormUser.module.scss";
 
-const InputFormUser = ({ text='', hint='', value = "", btn = false, titleBtn='',  img, placeholder='', inputElement=true, select=[], valueInput }) => {
-	const changeInput = (e) =>{
+const InputFormUser = ({ text='', hint='', value = "", btn = false, titleBtn='',  img, placeholder='', inputElement=true, select=[], valueInput }:any) => {
+	const changeInput = (e:any) =>{
 		valueInput(e.target.value)
 	}
   return (
@@ -13,7 +13,7 @@ const InputFormUser = ({ text='', hint='', value = "", btn = false, titleBtn='',
 	  	{inputElement && <div className={styles.inputMain}>
 			  {select.length ? 
 				  <select>
-					  {select.map((item, id) => <option key={id}>{item}</option>)}
+					  {select.map((item:any, id:number) => <option key={id}>{item}</option>)}
 				  {/* <option value="1" selected disabled>*/}
 			  </select> : 
         <input type="text" placeholder={hint} onChange={changeInput}/>

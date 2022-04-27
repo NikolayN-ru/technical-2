@@ -5,5 +5,5 @@ export interface propMenuDownItem {
 }
 
 export interface propMenuDown {
-  menuDown: propMenuDownItem[]
+  menuDown?: propMenuDownItem[]
 }

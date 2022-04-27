@@ -3,10 +3,10 @@ import { mainCity } from "@/redux/actions";
 import { useState } from "react";
 import { connect } from "react-redux";
 
-const CutyPopup = ({ toggleState, city, mainCity }) => {
+const CutyPopup = ({ toggleState, city, mainCity }:any) => {
   const [state, setState] = useState<string[]>(city);
 
-  const changeCitys = (e) => {
+  const changeCitys = (e: any) => {
     if (e.target.value == "") {
       return setState(city);
     }

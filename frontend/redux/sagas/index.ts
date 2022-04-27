@@ -25,7 +25,7 @@ const delay = (time: number) =>
 export function* messageDisplay(message: string) {
   yield put<any>(messageWrite(message));
   yield delay(2);
-  yield put(messageWrite(""));
+  yield put<any>(messageWrite(""));
 }
 
 export function* workerSagaAdd() {

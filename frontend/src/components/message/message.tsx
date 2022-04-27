@@ -4,7 +4,7 @@ import { FC } from "react";
 import { useSelector } from "react-redux";
 
 const Massage: FC = (): JSX.Element => {
-  const message = useSelector(({ messageData }) => messageData.mes);
+  const message = useSelector(({ messageData }:any) => messageData.mes);
   return (
     <div
       className={cn(styles.message, {

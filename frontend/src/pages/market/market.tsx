@@ -4,7 +4,7 @@ import { breadCamps, changeMenuShop } from "@/redux/actions";
 import { FC, useEffect } from "react";
 import { connect, useSelector } from "react-redux";
 
-const Market: FC = ({ breadCamps, changeMenuShop }): JSX.Element => {
+const Market: FC = ({ breadCamps, changeMenuShop }:any): JSX.Element => {
   const marketData = useSelector(({marketData}:any) => marketData)
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const Market: FC = ({ breadCamps, changeMenuShop }): JSX.Element => {
     <div className={styles.market}>
       <div className={styles.filter}>...filter-block-prosessing</div>
       <div className={styles.main}>
-		  {marketData && marketData.data.map((item, id) => <MarketItem key={id} {...item}/>)}
+		  {marketData && marketData.data.map((item:any, id:number) => <MarketItem key={id} {...item}/>)}
       </div>
     </div>
   );

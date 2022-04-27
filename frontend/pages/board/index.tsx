@@ -6,11 +6,14 @@ import UserLike from "@/src/pages/userLike";
 import UserMessage from "@/src/pages/userMessage";
 import { NextPage } from "next";
 import { useEffect } from "react";
-import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-const Board: NextPage = ({ menu, changeMenuUpMain }): JSX.Element => {
+const Board: NextPage = (): JSX.Element => {
+  const menu = useSelector(({ naviMenu }:any) => naviMenu);
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    changeMenuUpMain();
+    dispatch(changeMenuUpMain());
   }, []);
   return (
     <LayoutMain>
@@ -23,14 +26,4 @@ const Board: NextPage = ({ menu, changeMenuUpMain }): JSX.Element => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    menu: state.naviMenu,
-  };
-};
-
-const mapDispatchToProps = {
-  changeMenuUpMain,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Board);
+export default Board;

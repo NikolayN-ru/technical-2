@@ -1,7 +1,7 @@
 import styles from './mobileMenu.module.scss';
 import cn from 'classnames';
 
-const MobileMenu = ({active}) => {
+const MobileMenu = ({active}:any) => {
 
   return (
 	<div className={cn(styles.mobileMenu, {

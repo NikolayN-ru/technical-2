@@ -15,12 +15,12 @@ const City: FC<CityInterface> = ({ city }): JSX.Element => {
 
   return (
     <div className={styles.city}>
-      <span onClick={toggleState}>{city.mainCity}</span>
+      <span onClick={toggleState}>{city && city.mainCity}</span>
       {/* <div className={styles.cityMenu}>
         {city.city &&
           city.city.map((item) => <CityItem key={item} item={item} />)}
       </div> */}
-      {state && <CityPopup toggleState={toggleState} city={city.city} />}
+      {state && <CityPopup toggleState={toggleState} city={city && city.city} />}
     </div>
   );
 };

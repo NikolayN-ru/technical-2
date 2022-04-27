@@ -42,7 +42,7 @@ export const inputQuestion = (question: string) => {
   return {
     type: INPUT_QUESTION,
     payload: question,
-  }
+  };
 };
 
 export const breadCamps = (items: string[]) => (dispatch: Dispatch) => {
@@ -52,7 +52,7 @@ export const breadCamps = (items: string[]) => (dispatch: Dispatch) => {
   });
 };
 
-export const clickBoardMainMenu = (item) => (dispatch: Dispatch) => {
+export const clickBoardMainMenu = (item:any) => (dispatch: Dispatch) => {
   dispatch({
     type: CLICK_BOARD_MAIN_MENU,
     payload: item,
@@ -69,7 +69,7 @@ export const checkItems = () => (dispatch: Dispatch, getState: () => any) => {
 
 export const fetchItem =
   (id: number) => (dispatch: Dispatch, getState: () => any) => {
-    const item = getState().marketData.data.find((item) => item.id === id);
+    const item = getState().marketData.data.find((item:any) => item.id === id);
     dispatch({
       type: FETCH_ITEM,
       payload: item,
@@ -94,10 +94,10 @@ export const changeMenuDownService = () => {
   };
 };
 
-export const changeMenuUpMain = () => (dispatch) => {
-  dispatch({
+export const changeMenuUpMain = () => {
+  return {
     type: MAIN_MENU_DOWN,
-  });
+  };
 };
 
 export const changeMenuSale = () => {
@@ -106,14 +106,14 @@ export const changeMenuSale = () => {
   };
 };
 
-export const changeMenuShop = () => (dispatch) => {
+export const changeMenuShop = () => (dispatch:Dispatch) => {
   dispatch({
     type: SERVICE_DATA,
   });
 };
 
-export const addCartItem = (id: number) => (dispatch, getState) => {
-  const idItem = getState().marketData.data.find((item) => item.id === id);
+export const addCartItem = (id: number) => (dispatch:Dispatch, getState:any) => {
+  const idItem = getState().marketData.data.find((item:any) => item.id === id);
   dispatch({
     type: ADD_CART_ITEM,
     payload: idItem,
@@ -127,23 +127,23 @@ export const delCartItem = (id: number) => {
   };
 };
 
-export const messageWrite = (m: string) => (dispatch) => {
+export const messageWrite = (m: string) => (dispatch:Dispatch) => {
   dispatch({
     type: MESSAGE_WRITE,
     payload: m,
   });
 };
 
-export const favoritesAdd = (item) => (dispatch) => {
+export const favoritesAdd = (item:any) => (dispatch:Dispatch) => {
   dispatch({
     type: FAVORITES_ADD,
     payload: item,
   });
 };
 
-export const favoritesDel = (id: number) => (dispatch, getState) => {
+export const favoritesDel = (id: number) => (dispatch:Dispatch, getState:any) => {
   const index = getState().favoritesData.favor.findIndex(
-    (item) => item.id == id
+    (item:any) => item.id == id
   );
   dispatch({
     type: FAVORITES_DEL,
@@ -165,7 +165,7 @@ export const bonusCartItem = (bonus: string) => {
   };
 };
 
-export const writeValue = (value: string) => (dispatch) => {
+export const writeValue = (value: string) => (dispatch:Dispatch) => {
   dispatch({
     type: WRITE_CART_VALUE,
     payload: value,

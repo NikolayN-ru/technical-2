@@ -7,17 +7,17 @@ import { FC, useEffect, useState } from "react";
 import { connect, useStore } from "react-redux";
 import { useSelector, useDispatch } from "react-redux";
 
-const CartPage: FC = ({ breadCamps }): JSX.Element => {
+const CartPage: FC = ({ breadCamps }:any): JSX.Element => {
   const [stateValue, setStateValue] = useState<string>('');
-  const items = useSelector(({ cartItems }) => cartItems.cart);
-  const cartData = useSelector(({ cartItems }) => cartItems);
+  const items = useSelector(({ cartItems }:any) => cartItems.cart);
+  const cartData = useSelector(({ cartItems }:any) => cartItems);
   const dispatch = useDispatch();
 
   useEffect(() => {
     breadCamps(["корзина"]);
   }, []);
 
-  const valueInput = (value) => {
+  const valueInput = (value: any) => {
     setStateValue(value)
   }
 
@@ -27,7 +27,7 @@ const CartPage: FC = ({ breadCamps }): JSX.Element => {
       <div className={styles.cartItems}>
         <div className={styles.itemsDesc}>
           {items.length ? (
-            items.map((item, id) => <CartItem {...item}/>
+            items.map((item:any, id: any) => <CartItem key={id} {...item}/>
             
             )
             ) : (

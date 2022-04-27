@@ -10,7 +10,7 @@ import { breadCamps, changeMenuUpMain, fetchItem } from "redux/actions";
 
 // data2: state.marketData.data,
 
-const ItemPage: FC = ({ fetchItem, data, breadCamps, changeMenuUpMain }): JSX.Element=> {
+const ItemPage: FC = ({ fetchItem, data, breadCamps, changeMenuUpMain }:any): JSX.Element=> {
   // const data2 = useSelector(({marketData}) => marketData.data)
   const [state, setState] = useState(0);
   const router = useRouter();
@@ -91,7 +91,7 @@ const ItemPage: FC = ({ fetchItem, data, breadCamps, changeMenuUpMain }): JSX.El
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: any) => {
   return {
     data: state.itemData.data,
   };

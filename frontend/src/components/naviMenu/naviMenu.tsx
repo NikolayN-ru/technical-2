@@ -6,7 +6,7 @@ import { FC, useEffect, useState } from "react";
 import { connect } from "react-redux";
 
 const NaviMenu: FC<naviMenuProps> = ({ menu=[] }): JSX.Element => {
-  const [state, setState] = useState(null);
+  const [state, setState] = useState<any>(null);
 
   useEffect(() => {
     setTimeout(() => {

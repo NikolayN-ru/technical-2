@@ -10,7 +10,7 @@ const menuDown: FC<propMenuDown> = ({ menuDown }): JSX.Element => {
   return (
     <div className={styles.menuDown}>
       <MenuDrop />
-      {menuDown.map(({ id, title, icon }: propMenuDownItem) => (
+      {menuDown && menuDown.map(({ id, title, icon }: propMenuDownItem) => (
         <ItemMenuDown key={id} title={title} icon={icon} />
       ))}
     </div>

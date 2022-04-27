@@ -8,7 +8,7 @@ import { connect, useDispatch } from "react-redux";
 import BtnMobile from "./btnMobile";
 
 interface HeaderProps {
-  fetchPhones: () => void;
+  fetchPhones?: () => void;
 }
 
 const Header: FC<HeaderProps> = (): JSX.Element => {
@@ -23,7 +23,7 @@ const Header: FC<HeaderProps> = (): JSX.Element => {
       <div className={styles.line}></div>
       <div className={styles.menu}>
         <MainMenu />
-        <UserModule />
+        <UserModule city='k'/>
       </div>
       <Extension />
       <div className={styles.btnMobile}>

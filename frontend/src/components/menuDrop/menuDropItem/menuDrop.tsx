@@ -2,7 +2,7 @@ import styles from "./MenuDropItem.module.scss";
 import Image from "next/image";
 import MenuItemDataDesc from "./menuDataItemDesc";
 
-const MenuDropItem = ({ title, dataItem }) => {
+const MenuDropItem = ({ title, dataItem }:any) => {
   return (
     <div className={styles.menuDropItem}>
       <p>{title}</p>

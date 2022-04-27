@@ -1,3 +1,3 @@
-import MarketItem from "./market";
+import MarketItem from "./marketItem";
 
 export default MarketItem;

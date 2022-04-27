@@ -6,7 +6,7 @@ import {
 } from "../actionTypes";
 import { actionProps } from "./interface";
 
-const initialState = {
+const initialState:any = {
   cart: [],
   total: 0,
   sale: 0,
@@ -33,7 +33,7 @@ export const cartItems = (state = initialState, { type, payload }:actionProps) =
         sale: 0
       };
       let totalNew = 0;
-      newState.cart.forEach((item) => (totalNew += item.price));
+      newState.cart.forEach((item:any) => (totalNew += item.price));
       return { ...newState, total: totalNew };
     case BONUS_CART_ITEM:
       if (payload === "bonus" && !state.bonus) {
